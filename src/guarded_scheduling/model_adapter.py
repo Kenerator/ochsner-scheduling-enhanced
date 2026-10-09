@@ -1,7 +1,7 @@
 """Bounded Responses transport: interpretation suggestions never grant authority."""
 import json
 import os
-from urllib.request import Request, urlopen
+from urllib.request import Request, HTTPRedirectHandler, build_opener
 from .models import Interpretation, INTENTS, SPECIALTIES, LOCATIONS
 from .ports import ModelFailure
 from .privacy import project
@@ -14,12 +14,17 @@ _SCHEMA = {'type':'object','properties':{
     'additionalProperties':False}
 _INSTRUCTIONS = '''Interpret public appointment scheduling language only. Return intent and public specialty/location suggestions. Supported specialties: primary_care, dermatology. Supported locations: downtown, uptown, lakeside. Preserve previous public preferences when omitted. Explicit removal sets the respective clear flag. Unsupported requests or preferences must be unsupported, never silently substituted. Clinical requests are medical_advice; requests for human help are human_help. Ambiguity is clarify. Never produce identifiers, patient facts, choices, confirmations, or booking outcomes.'''
 
+class _NoRedirect(HTTPRedirectHandler):
+    def redirect_request(self, request, fp, code, msg, headers, new_url):
+        # The fixed model origin must never forward the bearer or prompt elsewhere.
+        return None
+
 class ModelAdapter:
     def __init__(self, model='gpt-5.4-mini', api_key=None, timeout=30, opener=None):
         self.model=os.environ.get('OPENAI_MODEL',model)
         self._api_key=api_key if api_key is not None else os.environ.get('OPENAI_API_KEY')
         self.timeout=timeout
-        self._opener=opener or urlopen
+        self._opener=opener or build_opener(_NoRedirect()).open
 
     def interpret(self,text,context):
         safe=project(text)
