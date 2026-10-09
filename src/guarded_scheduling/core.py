@@ -54,12 +54,31 @@ class SchedulingSession:
         self._unknown=True;self._invalidate()
         return self._show('unresolved','The booking outcome is unknown. Do not book again or treat reset/restart as failure. Contact the scheduling team through your usual channel to reconcile the appointment first.')
 
+    def _support_summary(self, reason):
+        # Allowlisted state only: never patient IDs, identity values or user/model prose.
+        known=[]
+        for field in ('specialty','location','start_date','end_date'):
+            value=getattr(self.preferences,field)
+            if value:known.append(field+'='+value)
+        missing=[]
+        if not self.preferences.specialty:missing.append('specialty')
+        if not self._patient:missing.append('identity_verification')
+        statuses=[event.get('status') for event in self.events if event.get('route')=='/appointments']
+        if self._unknown:outcome='unresolved'
+        elif self._appointment:outcome='previous_api_confirmed'
+        elif statuses:outcome={409:'rejected_conflict',400:'rejected',503:'not_confirmed'}.get(statuses[-1],'not_submitted')
+        else:outcome='not_submitted'
+        return ('Scheduling prototype requires human assistance: '+reason.replace('_',' ')+'. '
+                +'Known scheduling preferences: '+(', '.join(known) or 'none')+'. '
+                +'Missing information: '+(', '.join(missing) or 'none for current scheduling request')+'. '
+                +'Booking outcome: '+outcome+'. No identity or transcript included.')
+
     def _handoff(self,reason,message):
         self._proposal=None
         key=(reason,self._revision)
         if key not in self._handoffs:
             try:
-                result=self._request('POST','/handoffs',body={'reason':reason,'summary':'Scheduling prototype requires human assistance: '+reason.replace('_',' ')+'. No identity or transcript included.'})
+                result=self._request('POST','/handoffs',body={'reason':reason,'summary':self._support_summary(reason)})
                 queued=(result.status==201 and isinstance(result.data.get('handoffId'),str) and bool(re.fullmatch(r'[A-Za-z0-9_-]{1,200}',result.data['handoffId'])) and result.data.get('status')=='queued')
                 self._handoffs[key]='queued' if queued else 'failed'
             except (UnknownOutcome,SchedulingUnavailable):self._handoffs[key]='unknown'
@@ -75,6 +94,7 @@ class SchedulingSession:
 
     @serialized
     def message(self,text):
+        if self._unknown:return self._unresolved()
         if not isinstance(text,str) or not text.strip() or len(text)>4000:return self._show('clarify','Please enter a short scheduling request.')
         text=text.strip()
         # Local commands are intentionally parsed before the model privacy boundary.
@@ -86,7 +106,12 @@ class SchedulingSession:
         if match:return self.set_identity(**{{'phone':'phone','dob':'dob','zip':'zip_code'}[match.group(1).lower()]:match.group(2).strip()})
         match=re.fullmatch(r'identity\s+(\S+)\s+(\S+)(?:\s+(\S+))?',text,re.I)
         if match:return self.set_identity(phone=match.group(1),dob=match.group(2),zip_code=match.group(3))
-        if re.fullmatch(r'\d{1,3}',text) and self._slots:return self.choose(int(text))
+        # Invalid numeric choices stay local and retain verified options, even signed/long input.
+        if re.fullmatch(r'[+-]?\d+',text) and self._slots:return self.choose(int(text))
+        if text.lower().rstrip('.?!') in ('i need human help','i want human help','human help','please help me contact scheduling'):
+            return self._handoff('user_requested','You requested human assistance.')
+        if text.lower().rstrip('.?!') in ('i have no email','i only have a basic phone','i do not have email','i have no smartphone'):
+            return self._handoff('user_requested','Email is not required. This prototype needs a browser or CLI; it does not provide a basic-phone service. Ask the scheduling team through your usual channel for assisted scheduling.')
         if text.lower()=='refresh':return self.refresh()
         if text.lower() in ('decline','no'):return self.decline()
         if text.lower()=='reset':return self.reset()
@@ -115,6 +140,10 @@ class SchedulingSession:
             reason={'human_help':'user_requested','medical_advice':'medical_advice','unsupported':'unsupported_request'}[result.intent]
             message={'human_help':'You requested human assistance.','medical_advice':'I cannot provide medical advice or triage. Contact a qualified healthcare professional directly.','unsupported':'That request is outside the supported scheduling scope. Rescheduling and cancellation are not implemented.'}[result.intent]
             return self._handoff(reason,message)
+        # The current API supports calendar dates, not hour/weekday filters. Never silently waive one.
+        if re.search(r'\b(morning|afternoon|evening|weekday|weekdays|weekend|weekends)\b',public,re.I):
+            self._invalidate();self.intent='clarify'
+            return self._show('clarify','Time-of-day and weekday/weekend filters are not supported. Use the preference controls for location and calendar dates, then restate the scheduling request without those time limits, or ask the scheduling team for help.')
         updates={}
         if result.clear_specialty:updates['specialty']=None
         elif result.specialty is not None:updates['specialty']=result.specialty
@@ -232,7 +261,7 @@ class SchedulingSession:
     def choose(self,index):
         if self._unknown:return self._unresolved()
         self._proposal=None
-        if type(index) is not int or not 1<=index<=len(self._slots) or not self._patient:return self._show('clarify','Choose a number from the current returned options; refresh if the options changed.')
+        if type(index) is not int or not 1<=index<=len(self._slots) or not self._patient:return self._show('clarify','Choose a number from the current returned options; refresh if the options changed.',slots=list(self._slots))
         self._proposal=Proposal(uuid.uuid4().hex[:12],self._patient,dict(self._slots[index-1]),self._revision)
         summary=self._public_proposal()
         return self._show('proposal','For the verified patient: '+summary['specialty'].replace('_',' ')+' — '+summary['location']+' — '+summary['startTime']+'. To book this exact appointment, use Confirm or type confirm '+self._proposal.proposal_id+'.',proposal_id=self._proposal.proposal_id,proposal=summary,slots=list(self._slots))

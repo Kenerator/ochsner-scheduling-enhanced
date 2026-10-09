@@ -58,7 +58,7 @@ def _(action_buttons, controller, emit, mo, snapshot):
         on_change=lambda values: emit('identity',{key:value for key,value in values.items() if value}) if values and any(values.values()) else None)
     _prefs = controller.session.preferences
     _preferences = mo.ui.batch(mo.md('**Preferences and corrections**\n\n{specialty}\n\n{location}\n\n{start_date}\n\n{end_date}'),
-        {'specialty':mo.ui.dropdown(['primary_care','dermatology'],value=_prefs.specialty,allow_select_none=True,label='Specialty',disabled=_locked),
+        {'specialty':mo.ui.dropdown({'Primary care':'primary_care','Dermatology':'dermatology'},value=({'primary_care':'Primary care','dermatology':'Dermatology'}.get(_prefs.specialty)),allow_select_none=True,label='Specialty',disabled=_locked),
          'location':mo.ui.dropdown(['downtown','uptown','lakeside'],value=_prefs.location,allow_select_none=True,label='Location (optional)',disabled=_locked),
          'start_date':mo.ui.text(value=_prefs.start_date or '',label='From date (optional YYYY-MM-DD)',disabled=_locked,max_length=10),
          'end_date':mo.ui.text(value=_prefs.end_date or '',label='Through date (optional YYYY-MM-DD)',disabled=_locked,max_length=10)}).form(
