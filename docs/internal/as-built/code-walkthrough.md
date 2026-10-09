@@ -1,6 +1,6 @@
 # Code walkthrough
 
-Updated: 2026-10-09 (America/Chicago). Source inspected: implementation working tree based on `688039e`; uncommitted changes are included. Final reviewed commit/checkpoint stamping remains pending integration by the implementation owner. This document describes inspected code and test coverage, not a fresh-clone, browser, live-model or final-review qualification.
+Updated: 2026-10-09 (America/Chicago). Source inspected: implementation 7738727a9f2ca97fe999527df20515a016a7332f; reviewed source and both fresh-clone qualification are pinned to this implementation commit. This document describes inspected code and test coverage, not a fresh-clone, browser, live-model or final-review qualification.
 
 Use this navigation aid with the [as-built architecture](architecture.md), [native tasks](../../../specs/001-guarded-scheduling/tasks.md), [decisions](../../product/decisions.md) and [UAT evidence](../uat.md). Native tasks own completion status; UAT owns qualification evidence.
 
@@ -32,7 +32,7 @@ All source and test links below resolve from this document's directory.
 
 For public lookup, `_advance` requests `/providers` without identity search. It displays validated returned provider facts. For booking or appointment lookup, missing phone/DOB causes a local identity request. `_advance` validates `PrivateIdentity`, calls `/patients/search`, and permits patient-specific work only after exactly one match. Duplicate matches require local ZIP filtering over the already returned candidates; ZIP is not added to the HTTP search query and candidate names/alternatives are not displayed. Identity corrections invalidate patient-bound choices and require verification again.
 
-Booking retrieves `/availability` only for the verified patient and accepted preferences. `validate_slots` checks available flags, unique IDs, specialty/location/provider/date bounds and timezone-aware returned timestamps. Times retain the supplied fixed offset; the application does not reinterpret fixture-relative dates itself. Appointment lookup requests `/patients/{patientId}/appointments`, validates each result against the verified patient and renders only public appointment display fields. [Lookup tests](../../../tests/test_scheduling_lookup.py) exercise verification and correction against an isolated actual reference server.
+Booking retrieves `/availability` only for the verified patient and accepted preferences. `validate_slots` checks available flags, unique IDs, specialty/location/date bounds and timezone-aware returned timestamps; a selected authoritative provider is filtered locally after validating the broad API response. Times retain the supplied fixed offset; the application does not reinterpret fixture-relative dates itself. Appointment lookup requests `/patients/{patientId}/appointments`, validates each result against the verified patient and renders only public appointment display fields. [Lookup tests](../../../tests/test_scheduling_lookup.py) exercise verification and correction against an isolated actual reference server.
 
 ## Follow authority and failure
 

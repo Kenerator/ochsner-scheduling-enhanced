@@ -32,3 +32,10 @@ Link relevant tags from as-built docs and video notes instead of duplicating thi
 Consider one near-final or explicitly deferred task to populate the [review report](reviews/adversarial-review.md). Reuse a sufficient existing independent review. Preserve the source commit reviewed; commit sanitized findings and useful synthetic regressions. A suggested immutable tag is `poc/review-01`; record its source here and push that named tag only under existing destination/privacy authority. No raw consultation transcript, new mandatory gate or extra publication grant.
 
 [^tagging]: [Git: tagging](https://git-scm.com/book/en/v2/Git-Basics-Tagging). Reviewed 2026-10-07. Use annotated tags for meaningful source checkpoints and explicitly push selected tags. Limit: A checkpoint is not release/publication authority or a budget-compliance claim.
+
+## Recorded Enhanced checkpoints
+
+- `poc/reference-baseline` →688039e: approved unchanged reference assets and credential guard.
+- `poc/enhanced-guarded-ui-01` →7738727a9f2ca97fe999527df20515a016a7332f: reviewed implementation,91tests, genuine model multi-turn synthetic booking and actual IAB confirmation. Private remote branch and peeled annotated tag verified at this SHA; fresh-clone qualification subsequently passed on both platforms. Tags are immutable.
+
+Operator-dispatched +2h/+3h checkpoints use distinct `poc/checkpoint-2h-20261009` / `poc/checkpoint-3h-20261009` tags at actual capture time; they are not yet claimed here.

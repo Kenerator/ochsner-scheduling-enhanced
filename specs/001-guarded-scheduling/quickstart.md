@@ -1,6 +1,6 @@
 # Quickstart validation guide
 
-Updated: 2026-10-08. **Prospective guide**: scheduling package/runner/commands are planned, not implemented or qualified during Plan. Existing poc_demo is generic scaffold evidence, not delivered scheduling. No model/credential test occurred.
+Updated: 2026-10-08. **Implementation qualification update**:7738727 passed91tests/all4demos from fresh private Mac ARM and Minty Linux clones. Genuine application model and IAB booking/no-match checks passed separately. Use the canonical [README](../../README.md) and [UAT](../../docs/internal/uat.md); remaining actual video is explicit.
 
 ## Prerequisites
 
@@ -9,14 +9,14 @@ Final reproduction requires fresh authenticated private GitHub clones on both Ma
 ```bash
 python3 -c 'import sys; print(sys.version); assert sys.version_info >= (3, 11)'
 python3 -m venv .venv
-.venv/bin/python -m pip install -e .
+.venv/bin/python -m pip install -e '.[ui]'
 ```
 
 If version check fails, select explicit compatible executable; no global tooling changes. Stdlib transports need no SDK. Reviewer baseline needs neither Bitwarden nor Marimo. Separately authorized genuine AI qualification uses approved process environment OPENAI_API_KEY and explicit OPENAI_MODEL, without pasting keys into commands/docs, copying secrets or debug output. Tests need neither key nor generation.
 
-## Planned run/reset commands
+## Run/reset commands
 
-After implementation, terminal 1 starts unchanged vendored reference via output-suppressing runner:
+Terminal 1 starts unchanged vendored reference via output-suppressing runner:
 
 ```bash
 PYTHONPATH=src .venv/bin/python -m guarded_scheduling.mock_runner --port 4011
@@ -40,7 +40,7 @@ PYTHONPATH=src .venv/bin/python -m guarded_scheduling.demo --scenario no-match
 PYTHONPATH=src .venv/bin/python -m guarded_scheduling.demo --scenario guards
 ```
 
-Suite includes existing scaffold plus meaningful scheduling tests. Demos own isolated resettable real reference processes, suppress raw mock output and label model doubles synthetic. Genuine AI qualification separately records actual generation and intent/behavior evidence; listing HTTP 200 is insufficient. Product commands above are future implementation contracts, not currently runnable instructions.
+Suite includes existing scaffold plus meaningful scheduling tests. Demos own isolated resettable real reference processes, suppress raw mock output and label model doubles synthetic. Genuine AI qualification separately records actual generation and intent/behavior evidence; listing HTTP 200 is insufficient. Product commands above were qualified against the implementation revision; tests and demos need no real model key.
 
 ## Acceptance scenarios
 

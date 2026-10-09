@@ -6,10 +6,10 @@ Contents: [Run](#run) · [Verify](#verify) · [Boundaries](#boundaries) · [Spec
 
 ## Run
 
-Use an authorized private clone. Verify your selected interpreter is Python 3.11 or newer; on macOS the system python3 may be older.
+Repository: [Kenerator/ochsner-scheduling-enhanced](https://github.com/Kenerator/ochsner-scheduling-enhanced) (private; reviewers need access). Use your normal GitHub HTTPS or SSH authentication. Verify your selected interpreter is Python 3.11 or newer; on macOS the system python3 may be older.
 
 ```sh
-git clone git@kenerator-github.com:Kenerator/ochsner-scheduling-enhanced.git
+git clone https://github.com/Kenerator/ochsner-scheduling-enhanced.git
 cd ochsner-scheduling-enhanced
 python3.11 -c 'import sys; print(sys.version); assert sys.version_info >= (3, 11)'
 python3.11 -m venv .venv
@@ -52,7 +52,7 @@ PYTHONPATH=src .venv/bin/python -m guarded_scheduling.demo --scenario no-match
 PYTHONPATH=src .venv/bin/python -m guarded_scheduling.demo --scenario guards
 ```
 
-See [UAT](docs/internal/uat.md) for actual verification and remaining qualification. A passing double is not live AI evidence. The recorded live generation probe is distinct from full-application qualification. Final Mac ARM and Minty Linux fresh-clone checks and the actual <=5 minute video must be recorded before those deliverables are called complete. No unsupported three-hour compliance statement is made.
+See [UAT](docs/internal/uat.md) for actual verification and remaining qualification. A passing double is not live AI evidence. The recorded live generation probe is distinct from full-application qualification. Fresh private Mac ARM and Minty Linux clones passed91tests/all4demos and dependency/Marimo checks at7738727. Actual <=5 minute video remains pending coordinated native capture assistance. No unsupported three-hour compliance statement is made.
 
 ## Boundaries
 
