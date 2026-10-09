@@ -16,11 +16,11 @@
 
 ## User Scenarios & Testing *(mandatory)*
 
-Story wording below is **inferred** from the cited supplied requirements/scenarios, rather than verbatim supplied user stories. Origin is distinct from scope: required capabilities remain required. All scenarios use synthetic data. Named primary and Support/Admin personas have not been selected or pinned; the explicit unresolved placeholders below retain coverage without inventing validated research or permissions. Selection is follow-on work, not a gate to implementation.
+Story wording below is **inferred** from the cited supplied requirements/scenarios, rather than verbatim supplied user stories. Origin is distinct from scope: required capabilities remain required. All scenarios use synthetic data. Exact named hypothesis personas were adopted2026-10-09 in [Personas](../../docs/product/personas.md), with retained pins/ancestors. Focused constraints map below; real-user validation remains follow-on and pins confer no permissions.
 
 ### User Story 1 - Find providers without identity collection (Priority: P1)
 
-As **Primary scheduling user — unresolved Persona placeholder**, I want to ask naturally about providers and refine my request across turns, so I can explore care scheduling options without supplying patient identity.
+As **Jules / Ellie-Rae, with Billy-June, Nina-Jean and Amy-Lou constraints (hypotheses)**, I want to ask naturally about providers and refine my request across turns, so I can explore care scheduling options without supplying patient identity.
 
 **Origin/basis**: INFERRED wording from assignment Required 1–3 and supplied `provider_lookup` scenario. **Scope**: accepted mandatory.
 
@@ -38,7 +38,7 @@ As **Primary scheduling user — unresolved Persona placeholder**, I want to ask
 
 ### User Story 2 - Book the exact appointment I confirm (Priority: P1)
 
-As **Primary scheduling user — unresolved Persona placeholder**, I want to supply missing information gradually, choose a real available appointment, and explicitly confirm the exact proposal, so the assistant books only the appointment I currently intend.
+As **Jules / Ellie-Rae, with Billy-June, Nina-Jean and Amy-Lou constraints (hypotheses)**, I want to supply missing information gradually, choose a real available appointment, and explicitly confirm the exact proposal, so the assistant books only the appointment I currently intend.
 
 **Origin/basis**: INFERRED wording from assignment Required 1, 2, 4, policies Identity and Booking, and `happy_path_booking`. **Scope**: accepted mandatory.
 
@@ -59,7 +59,7 @@ As **Primary scheduling user — unresolved Persona placeholder**, I want to sup
 
 ### User Story 3 - Receive a private, truthful failure and next step (Priority: P1)
 
-As **Primary scheduling user — unresolved Persona placeholder**, I want unresolved identity, unavailable scheduling and unsupported requests explained plainly, so I can seek real help without disclosure or false assurance.
+As **Jules / Ellie-Rae, with Billy-June, Nina-Jean and Amy-Lou constraints (hypotheses)**, I want unresolved identity, unavailable scheduling and unsupported requests explained plainly, so I can seek real help without disclosure or false assurance.
 
 **Origin/basis**: INFERRED wording from assignment Required 5, all supplied policies and failure scenarios. **Scope**: no-match baseline mandatory; duplicate, medical advice, conflict and outage guards accepted mandatory by Operator contract. Other policy boundaries always apply, even when optional scenario coverage is deferred.
 
@@ -80,7 +80,7 @@ As **Primary scheduling user — unresolved Persona placeholder**, I want unreso
 
 ### User Story 4 - Refine preferences and inspect existing appointments (Priority: P2)
 
-As **Primary scheduling user — unresolved Persona placeholder**, I want clear corrections, optional date filters and my verified existing appointment details, so I can make an informed scheduling choice.
+As **Jules / Ellie-Rae, with Billy-June, Nina-Jean and Amy-Lou constraints (hypotheses)**, I want clear corrections, optional date filters and my verified existing appointment details, so I can make an informed scheduling choice.
 
 **Origin/basis**: INFERRED wording from assignment Good-to-have, `multiple_patient_matches` lookup example, and Operator Enhanced lane preference. **Scope**: Enhanced target; appointment lookup and provider typo suggestions are optional relative to the assignment minimum. Preference corrections that invalidate consent are already mandatory in Story 2.
 
@@ -98,7 +98,7 @@ As **Primary scheduling user — unresolved Persona placeholder**, I want clear 
 
 ### User Story 5 - Understand recovery context without sensitive transcripts (Priority: P2)
 
-As **Support/Admin teammate — unresolved Persona placeholder**, I want factual outcome and reason context, so I can distinguish attempted, completed and unknown actions and help safely.
+As **Morgan-Rae — human support hypothesis**, I want factual outcome and reason context, so I can distinguish attempted, completed and unknown actions and help safely.
 
 **Origin/basis**: INFERRED background Support/Admin story reconciled with policies Observability and Human Handoff. **Scope**: minimal privacy-safe diagnostic/documentation coverage required; queued handoff is Enhanced target/assignment optional. No admin console, new access permissions or live delivery capability is implied.
 
@@ -116,7 +116,7 @@ As **Support/Admin teammate — unresolved Persona placeholder**, I want factual
 
 ### User Story 6 - Reproduce and judge the PoC honestly (Priority: P2)
 
-As **Developer/reviewer — unresolved Persona placeholder**, I want declared setup, bounded demonstrations and inspectable source-based decisions, so I can reproduce the behavior and understand its limitations.
+As **Sam-Rae — AGENT QA hypothesis**, I want declared setup, bounded demonstrations and inspectable source-based decisions, so I can reproduce the behavior and understand its limitations.
 
 **Origin/basis**: INFERRED wording from assignment What To Submit, Operator lane preferences, and Constitution V–VII. **Scope**: reproduction/disclosure required; the Enhanced candidate is authorized and adopted; other candidate lanes have independent owners.
 
@@ -201,7 +201,7 @@ As **Developer/reviewer — unresolved Persona placeholder**, I want declared se
 - Assignment external effort budget is three hours from full-package receipt, with video due thirty minutes after the coding deadline and the last authorized pushed commit used for review. The recorded receipt anchor is 2026-10-08 22:41 America/Chicago; compliance must be supported by actual execution evidence. The Operator owns budget compliance/tradeoffs; agents report timing without independently shrinking/stopping work. No deadline, push or timing certification is inferred from this stage.
 - Supplied temporary-key guidance is superseded operationally by the explicit eventual Operator credential preference. Application calls uses an ordinary environment API key at runtime. The authorized development qualification uses a trusted local credential helper into process-local environment; this document contains no credential. Actual generation qualification is separate from model listing. Reviewer configuration remains ordinary environment key/model.
 - `.DS_Store` is the sole manifest attachment and was identified as Apple desktop metadata, not interpreted as requirements. No material non-text client requirement is known from the manifest; no claim is made that its binary contents were reviewed.
-- Persona selection/pinning remains pending in [personas](../../docs/product/personas.md). Named persona demographics, validated preferences and permissions are not inferred. Predictable correction, minimal identity collection, useful error recovery and support evidence are current source-backed needs.
+- Exact hypothesis persona selection/pinning is recorded in [personas](../../docs/product/personas.md); real-user validation remains pending. Named persona demographics, validated preferences and permissions are not inferred. Predictable correction, minimal identity collection, useful error recovery and support evidence are current source-backed needs.
 - Existing scaffold decisions describe generic mechanisms, not supplied scheduling implementation or cross-process idempotency. This spec's unknown-outcome and consent requirements govern the candidate; legacy “hands off” wording is not proof of a queue.
 
 ### Candidate scope and launch boundary
