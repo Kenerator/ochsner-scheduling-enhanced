@@ -51,3 +51,11 @@ Ellie-Rae invalid-choice repair: keyboard1000 is rejected while a verified retur
 - Pixel-identical lossless PNG copy: `/Volumes/Seagate Backup Plus Drive/nxus-media-studio/source-media/oscar-poc-engineering-review/assignment-stills/enhanced/20261009/OSCAR__enhanced__ellie-invalid-choice__3330c7e7__S01.png`
 
 IAB exports JPEG bytes through the documented Node filesystem export. Native originals were copied byte-identically with exclusive creation, JPEG magic/dimensions/SHA checked. Earlier requested PNG copies preserve identical decoded pixels/mode/dimensions, with no crop/retouch/recreation; their adjacent `.json` sidecars identify the conversion and unchanged original. No existing asset/take was overwritten. JSONs bind exact runtime/product SHA, RC, notes SHA/content digest, capture time, state, named pinned persona/need/implemented impact and limitations. Originals and images stay outside Git. Actual paths were delivered directly to SM and Media; Media may choose native JPEGs and refine the assembly.
+
+Durable original preservation verified again against unchanged temporary exports:
+
+- `/Volumes/Seagate Backup Plus Drive/nxus-media-studio/source-media/oscar-poc-engineering-review/assignment-stills/enhanced/20261009/OSCAR__enhanced__provider-overview__3330c7e7__S01.jpg` — SHA256 `b53ebf6f1376a7a8d963a528f58d257494a2e8ed7cfc15daa2f2cb2950121871`.
+
+- `/Volumes/Seagate Backup Plus Drive/nxus-media-studio/source-media/oscar-poc-engineering-review/assignment-stills/enhanced/20261009/OSCAR__enhanced__ellie-invalid-choice__3330c7e7__S01.jpg` — SHA256 `87ded0df884fcb87de405750be0ae106b4053bd1cd82163bd3e2809ab32ebf3d`.
+
+Both native and PNG sidecars now cross-reference these durable originals, retained capture-export paths, and successful identical mode/dimensions/decoded-pixel verification. Sidecar metadata was updated as requested; JPEG/PNG assets were never overwritten.
