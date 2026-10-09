@@ -158,7 +158,7 @@ Retain Constitution, bootstrap controls, managed assets and unchanged `vendor/re
 - [ ] T064 Verify as-built navigation, diagram rendering/meaning and source/test links in docs/internal/as-built/architecture.md, docs/internal/as-built/code-walkthrough.md and README.md against combined implementation; integrate independently drafted sections before handoff.
 - [x] T065 Populate or explicitly defer priorities/increments in docs/product/backlog.md, docs/product/roadmap.md and docs/product/sprint-planning.md; update docs/product/user-stories.md as native-story index, docs/product/decisions.md for actual tradeoffs and short linked docs/product/next-steps.md without duplicate completion ledgers.
 - [x] T066 Consider one optional independent adversarial review per docs/internal/reviews/adversarial-review.md; reuse adequate reviewed-source evidence or explicitly defer, retain sanitized findings/source revision and meaningful regressions without adding an MVP gate.
-- [ ] T067 Review scoped local Git checkpoint eligibility in docs/internal/milestones.md and docs/internal/security.md: before any later authorized commit scan the whole staged index with PYTHONPATH=src python3 -m poc_template secrets scan --project ., surface incomplete scans and preserve hooks; use unused immutable annotated milestone/pre-post refinement tags only when source is actually committed, otherwise record pending; no push without destination/privacy grant.
+- [x] T067 Review scoped local Git checkpoint eligibility in docs/internal/milestones.md and docs/internal/security.md: before any later authorized commit scan the whole staged index with PYTHONPATH=src python3 -m poc_template secrets scan --project ., surface incomplete scans and preserve hooks; use unused immutable annotated milestone/pre-post refinement tags only when source is actually committed, otherwise record pending; no push without destination/privacy grant.
 - [ ] T068 Run final PYTHONPATH=src python3 -m unittest discover -s tests -v and src/guarded_scheduling/demo.py provider/booking/no-match/guards commands plus affected adopted flows; record actual results, latency misses, reproduction/live-AI/video/deferred limits in docs/internal/uat.md and short handoff in docs/product/next-steps.md; tasks.md alone owns completion status.
 
 ---
@@ -230,7 +230,7 @@ Where client concurrency is unavailable or a file/store/install state conflicts,
 
 **Analysis reconciliation (2026-10-08)**: Read-only Analyze found full 20-FR coverage and four scoped consistency findings; current approved Enhanced adoption, dual-platform fresh-clone qualification, operational authority/evidence separation and reviewer-visible links are reconciled by the implementation owner. The two generic no-implementation-detail checklist exceptions preserve explicit API requirements and are not unresolved scope decisions.
 
-**Status**: All task boxes remain unchecked. Generation does not execute implementation, install optional dependencies, qualify genuine AI, create video, commit/tag or deliver externally.
+**Historical Tasks-stage status**: At generation all boxes were unchecked; later implementation progress is reflected in the task checkboxes and dated evidence below. Generation itself did not execute implementation or delivery.
 
 ### Tasks-stage validation (2026-10-08)
 
@@ -243,3 +243,6 @@ All 10 existing scaffold unittest cases passed with `PYTHONPATH=src python3 -m u
 **Qualified source**:7738727a9f2ca97fe999527df20515a016a7332f. Both fresh private clones passed 91 tests/all 4 demos/dependency and Marimo checks; actual IAB provider, booking, no-match and truthful mock handoff passed. As-built diagrams rendered and links verified. T068 remains open for final handoff and actual recording status; video requires coordinated native capture assistance and is not fabricated from screenshots.
 
 **Post-2h delta qualification**:256a1b41bcbdb65927153cc8157ba4d8215e2165 refuses model redirects; regression reproduced the earlier stdlib credential forwarding using only mocked HTTPS and a literal placeholder.92 tests, genuine application booking and both original fresh clones incrementally fast-forwarded from GitHub passed. +2h tag acdd0b6 remains immutable. Product implementation/setup/qualification is complete; actual continuous recording is an explicit follow-on that may continue after3h. T068 remains open for the final combined delivery handoff, with video status truthfully pending.
+
+
+**RC-1**: Frozen a20ab9c0334993d399b826dc09fabf50edf2da22 passed92 tests/all4 demos and actual IAB booking/duplicateZIP/no-match qualification; immutable private tag captured2026-10-09 01:00:55.556307 CDT and remote peeledSHA verified. T067 checkpoint/scan review is completed; T068 final combined handoff remains open, with full filming rehearsal and actual video explicitly pending. See [UAT](../../docs/internal/uat.md) and [video notes](../../docs/internal/video-notes.md).
