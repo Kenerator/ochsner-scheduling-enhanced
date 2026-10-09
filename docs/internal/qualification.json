@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "timeout": 900,
+  "install": [
+    "{python}",
+    "-m",
+    "pip",
+    "install",
+    ".[ui]"
+  ],
+  "checks": [
+    {
+      "name": "unit-tests",
+      "argv": [
+        "{python}",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ]
+    },
+    {
+      "name": "scheduling-provider",
+      "argv": [
+        "{python}",
+        "-m",
+        "guarded_scheduling.demo",
+        "--scenario",
+        "provider"
+      ]
+    },
+    {
+      "name": "scheduling-booking",
+      "argv": [
+        "{python}",
+        "-m",
+        "guarded_scheduling.demo",
+        "--scenario",
+        "booking"
+      ]
+    },
+    {
+      "name": "scheduling-no-match",
+      "argv": [
+        "{python}",
+        "-m",
+        "guarded_scheduling.demo",
+        "--scenario",
+        "no-match"
+      ]
+    },
+    {
+      "name": "scheduling-guards",
+      "argv": [
+        "{python}",
+        "-m",
+        "guarded_scheduling.demo",
+        "--scenario",
+        "guards"
+      ]
+    }
+  ]
+}

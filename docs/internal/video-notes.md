@@ -1,0 +1,7 @@
+# Video notes
+
+Updated: 2026-10-09. **Actual recording pending**; this is a script from tested flows, not a finished video. Target duration4:30, maximum5:00. Use only controlled IAB and synthetic records; mask private fields and exclude credentials, terminal environment and raw logs.
+
+0:00–0:30: AI/synthetic disclosure and local branding; no production authentication/clinical care. 0:30–1:10: provider lookup and Downtown refinement with actual returned facts. 1:10–2:30: private synthetic identity, returned options, exact proposal and separate confirmation; choosing is not booking. 2:30–3:10: reset local conversation, no-match failure and honest next step. 3:10–4:00: [actual architecture](as-built/architecture.md), model only interprets public intent/preferences, core owns effects, unknown outcome locks retry. 4:00–4:30: [UAT evidence and limits](uat.md), conservative vocabulary, no real handoff delivery, no cancel/reschedule/reconciliation endpoint, [next steps](../product/next-steps.md).
+
+Primary/Support/Admin Persona pins remain unresolved in [personas](../product/personas.md). Native [spec](../../specs/001-guarded-scheduling/spec.md), [tasks](../../specs/001-guarded-scheduling/tasks.md) and [walkthrough](as-built/code-walkthrough.md) are canonical. No three-hour compliance statement is supported or asserted. Operator owns effort/window trade-offs. Reviewed commit/tag and final recording artifact must be added after they exist.

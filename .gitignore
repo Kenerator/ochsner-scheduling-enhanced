@@ -28,3 +28,12 @@ docs/internal/private/
 .specify/bootstrap.json
 docs/product/RFP/source/
 docs/product/RFP/manifest.json
+
+# Private launch/coordination input; product requirements are reconciled in native spec.
+docs/product/intake/001.md
+
+# Marimo runtime session/cache may contain local interactive state.
+apps/__marimo__/
+
+# Native step installation runtime lock.
+.specify/.step-install.lock
