@@ -47,3 +47,5 @@ Operator-dispatched +2h/+3h checkpoints use distinct immutable tags at actual ca
 
 - `poc/personas-introduced-v1` →9029ef52e05fa572403f4f9c1a2329e86a0ec658: actual2026-10-09 01:24:18.372310 CDT; seven exact hypothesis pins and required ancestry/mappings, no behavior impact claim. Private peeled tag verified.
 - `poc/personas-impact-v1` and `RC-2` →3330c7e72894928b3d5a6903254fed08bf3ce12b: actual2026-10-09 01:38:08.138086 and01:38:08.901794 CDT respectively. Red-first persona-driven fixes,99 tests/all4 demos and affected actual IAB flows green; clean capture/private branch and both peeled tags verified. RC-1 unchanged; video pending.
+
+- `poc/checkpoint-3h-20261009` →70e55a18a6c3d0b6356836ae0a767c23804ca8f7: actual2026-10-09 01:41:01.005226 CDT,0.005226s after01:41:01 target. All agents/native writers quiesced; tree clean before/after private nonforce push; remote main and peeled tag verified exactSHA. Snapshot includes RC-2 source plus evidence docs; video remains separate. This records actual timing, not effort compliance or final submission.
