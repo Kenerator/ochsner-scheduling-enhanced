@@ -52,7 +52,7 @@ PYTHONPATH=src .venv/bin/python -m guarded_scheduling.demo --scenario no-match
 PYTHONPATH=src .venv/bin/python -m guarded_scheduling.demo --scenario guards
 ```
 
-See [UAT](docs/internal/uat.md) for actual verification and remaining qualification. A passing double is not live AI evidence. The recorded live generation probe is distinct from full-application qualification. Fresh private Mac ARM and Minty Linux clones passed91tests/all4demos and dependency/Marimo checks at7738727. Actual <=5 minute video remains pending coordinated native capture assistance. No unsupported three-hour compliance statement is made.
+See [UAT](docs/internal/uat.md) for actual verification and remaining qualification. A passing double is not live AI evidence. Genuine three-turn model-backed provider refinement and synthetic booking passed; controlled IAB provider, booking and no-match flows were also verified. Fresh private Mac ARM and Minty Linux clones passed 91 tests/all 4 demos at 7738727, then both were incrementally updated from GitHub to 256a1b4 and passed 92 tests/all 4 demos and dependency/Marimo checks. Actual <=5 minute video remains pending coordinated native capture assistance. No unsupported three-hour compliance statement is made.
 
 ## Boundaries
 

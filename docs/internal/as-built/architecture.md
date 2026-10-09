@@ -1,6 +1,6 @@
 # As-built architecture
 
-Updated: **2026-10-09 (America/Chicago)**. Reviewed source revision: **7738727a9f2ca97fe999527df20515a016a7332f**.
+Updated: **2026-10-09 (America/Chicago)**. Reviewed source revision: **256a1b41bcbdb65927153cc8157ba4d8215e2165**.
 
 This describes the implemented Enhanced candidate. [Native contracts](../../../specs/001-guarded-scheduling/contracts/README.md) define the boundaries; [code walkthrough](code-walkthrough.md), [decisions](../../product/decisions.md), [UI asset index](../ui-assets.md) and [milestones](../milestones.md) supply complementary detail.
 
@@ -100,3 +100,5 @@ Core events contain allowlisted state/intent, normalized route, status/reason an
 - The [scripted demo](../../../src/guarded_scheduling/demo.py) calls the real reference HTTP server, explicitly labels its model as scripted, and isolates every run. The integration owner separately reports a successful live three-turn model plus reference booking flow; final evidence links belong in [video notes](../video-notes.md). At this review, controlled IAB inspection confirms the branded UI and disclosure render, but browser booking/replay behavior is not yet qualified.
 
 No production identity authentication, patient data, clinical advice/triage, eligibility rules, reschedule/cancel endpoint, delivered human support or multi-user production persistence is implemented. There is no retained application transcript; browser/framework state and private memory still require local handling. Full accessibility conformance and production readiness are not claimed. Both actual Mermaid diagrams rendered successfully and were visually reviewed in controlled IAB after correcting sequence punctuation; relative source/navigation links resolve. Planned alternatives remain in the [native plan](../../../specs/001-guarded-scheduling/plan.md), not as-built claims.
+
+Model transport delta: the default Responses opener rejects redirects before bearer credentials can leave the fixed API origin. A mocked stdlib redirect regression reproduced the earlier forwarding and now passes; no actual credential/network was used in that test. Genuine application qualification and both remote-updated qualification clones passed after this change.

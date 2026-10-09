@@ -1,6 +1,6 @@
 # Code walkthrough
 
-Updated: 2026-10-09 (America/Chicago). Source inspected: implementation 7738727a9f2ca97fe999527df20515a016a7332f; reviewed source and both fresh-clone qualification are pinned to this implementation commit. This document describes inspected code and test coverage, not a fresh-clone, browser, live-model or final-review qualification.
+Updated: 2026-10-09 (America/Chicago). Source inspected: implementation 256a1b41bcbdb65927153cc8157ba4d8215e2165; reviewed source and both fresh-clone qualification are pinned to this implementation commit. This document describes inspected code and test coverage, not a fresh-clone, browser, live-model or final-review qualification.
 
 Use this navigation aid with the [as-built architecture](architecture.md), [native tasks](../../../specs/001-guarded-scheduling/tasks.md), [decisions](../../product/decisions.md) and [UAT evidence](../uat.md). Native tasks own completion status; UAT owns qualification evidence.
 
@@ -67,3 +67,5 @@ The public vocabulary is intentionally conservative: unfamiliar wording, non-ASC
 A useful bounded exercise is adding one ordinary public scheduling phrase to `privacy.project` without admitting identity. First add a literal phrase case in [privacy tests](../../../tests/test_scheduling_privacy.py), observe rejection, then adjust only the public vocabulary and verify mixed identity/number-word/known-value collision cases still suppress transmission. Run the full suite and four demos above. Preserve local identity, dates, choice and separate current confirmation; do not solve a phrase failure by forwarding arbitrary raw messages or weakening model schema validation.
 
 For a different exercise, extend [suggestion tests](../../../tests/test_scheduling_suggestions.py) with a genuine spelling-distance boundary before changing `suggest`; preserve authoritative candidate provenance and explicit selection. Packaging pins and launch details are in [pyproject.toml](../../../pyproject.toml) and [development](../development.md). Reviewed commit/tag evidence belongs in [milestones](../milestones.md).
+
+Model transport delta: the default Responses opener rejects redirects before bearer credentials can leave the fixed API origin. A mocked stdlib redirect regression reproduced the earlier forwarding and now passes; no actual credential/network was used in that test. Genuine application qualification and both remote-updated qualification clones passed after this change.

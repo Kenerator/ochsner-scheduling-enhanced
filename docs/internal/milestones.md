@@ -36,6 +36,9 @@ Consider one near-final or explicitly deferred task to populate the [review repo
 ## Recorded Enhanced checkpoints
 
 - `poc/reference-baseline` →688039e: approved unchanged reference assets and credential guard.
-- `poc/enhanced-guarded-ui-01` →7738727a9f2ca97fe999527df20515a016a7332f: reviewed implementation,91tests, genuine model multi-turn synthetic booking and actual IAB confirmation. Private remote branch and peeled annotated tag verified at this SHA; fresh-clone qualification subsequently passed on both platforms. Tags are immutable.
+- `poc/enhanced-guarded-ui-01` →7738727a9f2ca97fe999527df20515a016a7332f: reviewed implementation,91 tests, genuine model multi-turn synthetic booking and actual IAB confirmation. Private remote branch and peeled annotated tag verified at this SHA; fresh-clone qualification subsequently passed on both platforms. Tags are immutable.
 
-Operator-dispatched +2h/+3h checkpoints use distinct `poc/checkpoint-2h-20261009` / `poc/checkpoint-3h-20261009` tags at actual capture time; they are not yet claimed here.
+Operator-dispatched +2h/+3h checkpoints use distinct immutable tags at actual capture time. +3h remains pending dispatch; no exact historical-time claim is made.
+
+- `poc/checkpoint-2h-20261009` →acdd0b6152b9f73862ec835d9bba0fa441c293af: progress snapshot captured2026-10-09 00:42:11.471751 CDT,70.472s late relative to00:41:01. All subagents completed/no native writer, tree clean at capture and after push; remote main and peeled tag matched exactSHA then. Later resumed product changes do not move this tag.
+- Post-checkpoint product delta 256a1b4: model redirect boundary fixed and92 tests/live application/both incrementally updated qualification clones passed.

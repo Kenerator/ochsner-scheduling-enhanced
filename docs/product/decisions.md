@@ -12,3 +12,5 @@ Updated: 2026-10-08.
 - Final setup qualification requires fresh private clones on Mac ARM and Minty Linux; mock matching is not production authentication, and mock handoff is not delivered human help.
 
 [Native specification](../../specs/001-guarded-scheduling/spec.md) owns accepted details; [tasks](../../specs/001-guarded-scheduling/tasks.md) owns completion.
+
+- Post-2h source 256a1b4 rejects Responses redirects; isolated placeholder regression plus92 tests/live application and remote-updated Mac/Minty qualification passed. Actual video remains a separate coordinated follow-on and cannot hold product checkpoints.
