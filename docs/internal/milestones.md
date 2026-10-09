@@ -44,3 +44,6 @@ Operator-dispatched +2h/+3h checkpoints use distinct immutable tags at actual ca
 - Post-checkpoint product delta 256a1b4: model redirect boundary fixed and92 tests/live application/both incrementally updated qualification clones passed.
 
 - `RC-1` →a20ab9c0334993d399b826dc09fabf50edf2da22: captured2026-10-09 01:00:55.556307 CDT with clean tree after frozen-source92 tests(6.332s), all4 demos, actual IAB duplicate ZIP/booking/no-match qualification. Remote main and peeled RC-1 both matched exactSHA after nonforce private push. Continuous video and full pre-capture control rehearsal remain pending; no GA/public release/submission claim. Later documentation does not move this tag.
+
+- `poc/personas-introduced-v1` →9029ef52e05fa572403f4f9c1a2329e86a0ec658: actual2026-10-09 01:24:18.372310 CDT; seven exact hypothesis pins and required ancestry/mappings, no behavior impact claim. Private peeled tag verified.
+- `poc/personas-impact-v1` and `RC-2` →3330c7e72894928b3d5a6903254fed08bf3ce12b: actual2026-10-09 01:38:08.138086 and01:38:08.901794 CDT respectively. Red-first persona-driven fixes,99 tests/all4 demos and affected actual IAB flows green; clean capture/private branch and both peeled tags verified. RC-1 unchanged; video pending.

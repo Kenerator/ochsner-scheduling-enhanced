@@ -34,3 +34,12 @@ Updated 2026-10-09, RC-1 `a20ab9c0334993d399b826dc09fabf50edf2da22`, controlled 
 - [ ] Record real clip paths and scenario/control timestamps after capture. No clips exist yet; media owns final<=5min edit and disclosure of omitted coverage.
 
 Evidence from this rehearsal: `/private/tmp/ochsner-rc1-booked.jpg`, `/private/tmp/ochsner-rc1-no-match.jpg`, and native controlled-IAB observations. These are screenshots, not continuous video. Relevant product changes require affected rehearsal repeats and a new immutable RC; old tags/footage retain their original identity.
+
+
+## Persona change requalification and capture hold
+
+Current intended source is RC-2 `3330c7e72894928b3d5a6903254fed08bf3ce12b`; use filename commit8 `3330c7e7`. Source remains fixed until a new numbered RC. Affected recording-OFF IAB checks passed as [UAT](uat.md#rc-2-and-focused-persona-evidence) records. Other prior rehearsal checks retain their actual historical source; final filming checklist requires unaffected configuration/scenario coverage plus fresh owned synthetic reset before CAPTURE-READY. No capture-ready or recording-completed claim.
+
+Earlier rehearsal also observed public provider/refinement and explicit suggestion recovery, verified appointment lookup, medical/unsupported/human handoffs, mixed private input rejection, empty availability and truthful outage. Unresolved controls were inspected in a clearly isolated derived UI harness under `/private/tmp/ochsner-unresolved-rehearsal`: actual unchanged backend received a synthetic write, test transport discarded its201, core rendered unknown and disabled fields/Apply/Refresh/Reset. Only controller factory and asset-root were substituted; this was component state rehearsal, not the normal filming configuration or a new product backend. It is not continuous footage or substitute for final configuration rehearsal.
+
+Chrome is permitted only under SM exclusive slot; no independent capture. Video is deferred until after01:41:01CDT; exact clip paths/timestamps remain pending. Media owns mechanics/final<=5min edit and omitted-coverage disclosure.

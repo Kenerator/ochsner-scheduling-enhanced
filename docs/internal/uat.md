@@ -1,8 +1,8 @@
 # Scheduling qualification evidence
 
-Updated: 2026-10-09, America/Chicago. Current qualified implementation revision: 256a1b41bcbdb65927153cc8157ba4d8215e2165. Initial fresh clones qualified 7738727; both were subsequently fast-forwarded from GitHub and requalified as recorded below. Documentation-only changes are identified separately.
+Updated: 2026-10-09, America/Chicago. Current qualified implementation revision: 3330c7e72894928b3d5a6903254fed08bf3ce12b (RC-2). Initial fresh clones qualified 7738727; both were subsequently fast-forwarded from GitHub and requalified as recorded below. Documentation-only changes are identified separately.
 
-Python: candidate .venv 3.11.13, macOS ARM. Current combined suite passed 92 tests in 5.574s after the transport delta; all four supplied-reference demos and both remote-updated qualification clones passed. Initial qualification evidence remains below.
+Python: candidate .venv 3.11.13, macOS ARM. Current combined suite passed99 tests in6.110s after persona constraint repairs; all four supplied-reference demos and both remote-updated qualification clones passed. Initial qualification evidence remains below.
 
 ## Actual checks
 
@@ -37,7 +37,7 @@ Both actual architecture Mermaid diagrams were rendered and visually reviewed in
 
 Current qualified implementation: 256a1b41bcbdb65927153cc8157ba4d8215e2165. A mocked standard-library HTTPS redirect reproduced forwarding of a placeholder bearer to a second host; the default Responses opener now refuses redirects. The isolated test made no network call and used no live secret. All92 integrated tests passed locally in 5.574s. Genuine three-turn application qualification again reached providers→Downtown refinement→booking identity→current separate confirmed booking, with model completion1.622/1.622/1.099s. No raw identity/transcript retained.
 
-The original fresh private clones above were incrementally updated by normal fetch and fast-forward-only merge from GitHub to exact256a1b4. They were not claimed as newly created clones: Mac ARM Python 3.11.13 passed 92 tests/all 4 demos/pip check/Marimo check-export; Minty Linux Python 3.12.3 passed 92 tests in 7.323s/all 4 demos/pip check/Marimo check. Both remained clean, reused their declared-dependency virtual environments and did not alter immutable tags. No dependency change occurred. Final code source is256a1b4; later documentation commits do not change that qualified code.
+The original fresh private clones above were incrementally updated by normal fetch and fast-forward-only merge from GitHub to exact256a1b4. They were not claimed as newly created clones: Mac ARM Python 3.11.13 passed 92 tests/all 4 demos/pip check/Marimo check-export; Minty Linux Python 3.12.3 passed 92 tests in 7.323s/all 4 demos/pip check/Marimo check. Both remained clean, reused their declared-dependency virtual environments and did not alter immutable tags. No dependency change occurred. Historical transport qualification source is256a1b4; later persona behavior qualification is recorded below.
 
 The main controlled IAB UI was restarted to load this exact source; a live provider lookup returned Dr. Elena Brooks and Dr. Marcus King. API 4011 remains a fresh owned synthetic baseline. Actual continuous video remains a separately coordinated follow-on and does not block product or timed checkpoints. No native recorder investigation is performed by the product lane.
 
@@ -45,3 +45,10 @@ The main controlled IAB UI was restarted to load this exact source; a live provi
 ## RC-1 frozen-source qualification —2026-10-09
 
 Exact source `a20ab9c0334993d399b826dc09fabf50edf2da22`; immutable annotated RC-1 captured01:00:55.556307 CDT. Tree clean at capture.92 tests passed in6.332s and all four supplied-reference demos passed; logs `/private/tmp/ochsner-rc1-*.log`. Actual controlled IAB on the unchanged candidate reverified live booking intent, private duplicate ZIP, exact returned proposal, separate confirmation/API-confirmed booking and no-match/truthful mock queue. Private remote main and peeled RC-1 were verified at this exact SHA. Subsequent recording-off rehearsal also verified preference/date controls, decline, refresh,409 and fresh-confirmation recovery. Full filming rehearsal and actual video remain pending in [video notes](video-notes.md); product qualification is not a claim that every UI scenario has been filmed.
+
+
+## RC-2 and focused persona evidence
+
+Source `3330c7e72894928b3d5a6903254fed08bf3ce12b`; clean frozen candidate passed99 tests in6.110s and all4 demos. Seven focused tests cover invalid numeric recovery, private assisted access, hour/weekend limitations, minimized known/missing/outcome summaries, safety/help priority over time words, and local help during identity collection. Tests failed for the repaired behaviors first; failed interpretation invalidation is verified existing behavior.
+
+Actual IAB requalification: no-email explanation; evening-filter limitation; help during private prompt; -1 and1000 retain current options; keyboard1 creates proposal with no repeated identity; separate keyboardConfirm books exact returned uptown2026-10-17T15:30:00-05:00; Primary care label applies canonical specialty; chest pain this morning still reaches medical boundary. All use supplied synthetic API and real model for public intent. `poc/personas-impact-v1` captured01:38:08.138086 CDT; RC-2 captured01:38:08.901794 CDT. Remote main and both peeled tags matched exactSHA after private nonforce push. Prior Mac/Minty setup evidence remains valid historical evidence; these new source changes have not yet been re-run in those clones. No dependency change, real-user validation, capture or production claim.

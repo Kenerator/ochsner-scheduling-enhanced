@@ -246,3 +246,6 @@ All 10 existing scaffold unittest cases passed with `PYTHONPATH=src python3 -m u
 
 
 **RC-1**: Frozen a20ab9c0334993d399b826dc09fabf50edf2da22 passed92 tests/all4 demos and actual IAB booking/duplicateZIP/no-match qualification; immutable private tag captured2026-10-09 01:00:55.556307 CDT and remote peeledSHA verified. T067 checkpoint/scan review is completed; T068 final combined handoff remains open, with full filming rehearsal and actual video explicitly pending. See [UAT](../../docs/internal/uat.md) and [video notes](../../docs/internal/video-notes.md).
+
+
+**Approved focused persona increment (2026-10-09)**: exact pins/ancestry introduced9029ef5; actual bounded behavior repairs at3330c7e qualified by99 tests/all4 demos/affected IAB flows and immutable persona-impact-v1/RC-2. Signed/oversized choices preserve verification, fixed local help/assisted-access remains private, unsupported time limits are explicit, plain labels retain canonical values, and known/missing/outcome summaries stay minimized. Failed interpretation consent invalidation is verified existing behavior. Final video/combined handoff T068 remains pending. This increment does not rerun bootstrap or rewrite historical launch personas arrays.
