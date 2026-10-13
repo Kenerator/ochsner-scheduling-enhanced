@@ -3,8 +3,9 @@
 Updated: 2026-10-12. Reviewed baseline:
 `164312722b33e55c382b500cf97a26f6ee41aa39`; additive launcher uses reviewed runtime
 `b7875452`/delivery `6e894645`. The candidate's114-test suite passed on Mac ARM,
-including15 consumer launcher checks; independent final review/integration is
-pending. Exact hypothesis pins and ancestor constraints remain in
+including15 consumer launcher checks. SM independent review passed and
+[PR1](https://github.com/Kenerator/ochsner-scheduling-enhanced/pull/1) integrated
+the selected candidate as `ee1a68c` on2026-10-13. Exact hypothesis pins and ancestor constraints remain in
 [Personas](../product/personas.md); they supply no permissions or real-user proof.
 [Native stories](../../specs/001-guarded-scheduling/spec.md) own acceptance;
 [tasks](../../specs/001-guarded-scheduling/tasks.md) own implementation progress.

@@ -31,7 +31,7 @@ interference is authorized by this increment.
   links, docs/internal/persona-story-test-index.md and short next steps from
   actual implementation/evidence. Explain direct reviewer versus normal
   model-first wrapper, private helper setup, failure and owned Ctrl-C cleanup.
-- [ ] T075 [US6] Obtain SM independent final-diff review; repair only affected
+- [x] T075 [US6] Obtain SM independent final-diff review; repair only affected
   deltas, stage/credential-scan and commit scoped owner changes; use ordinary
   protected PR/CI/integration and read back source without moving existing tags.
 
@@ -45,7 +45,18 @@ all four module hashes match. Expanded15 consumer tests plus existing99 pass
 mistake was corrected in the test harness, not product code. SM centrally
 confirmed dedicated notes-field preflight; this owner made no vault/model call.
 See [UAT](../../docs/internal/uat.md#model-first-launcher-increment) for bounds.
-Final independent review/protected integration T075 remains pending.
+**T075 closure (2026-10-13)**: SM approved final consumer2cacc2f and the sole
+docstring precision delta4ff15e9. [PR1](https://github.com/Kenerator/ochsner-scheduling-enhanced/pull/1)
+merged normally with an exact-head check as
+`ee1a68ca47d6394c71cd10270bf566ae3aa61fc6`; its tree
+`1be4eec1a2c45a186afe31af52895485bcdf9b15` equals reviewed4ff15e9.
+Canonical main fast-forwarded cleanly; all eight tag objects/peeled targets are
+unchanged. GitHub CI is absent, not green; actual PR/protection rules were
+respected without bypass. The restricted broker's PR-create denial was resolved
+through the SM-verified existing owner login, with no auth/token/global-setting
+change. Candidate114 tests/all4 demos, SM15 focused passes, four module hashes,
+179 links and guard230 files/0unresolved are retained without a redundant suite
+restart for documentation. No paid request, vault re-query or new RC occurred.
 
 **Input**: [plan.md](plan.md), [spec.md](spec.md), [research.md](research.md), [data-model.md](data-model.md), [contracts](contracts/README.md), [quickstart.md](quickstart.md).
 **Updated**: 2026-10-08. Implementation and verification progress recorded below; unchecked tasks remain outstanding.
