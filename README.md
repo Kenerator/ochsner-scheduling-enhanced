@@ -6,7 +6,7 @@ Contents: [Run](#run) · [Verify](#verify) · [Boundaries](#boundaries) · [Spec
 
 ## Run
 
-Repository: [Kenerator/ochsner-scheduling-enhanced](https://github.com/Kenerator/ochsner-scheduling-enhanced) (private; reviewers need access). Use your normal GitHub HTTPS or SSH authentication. Verify your selected interpreter is Python 3.11 or newer; on macOS the system python3 may be older.
+Repository: [Kenerator/ochsner-scheduling-enhanced](https://github.com/Kenerator/ochsner-scheduling-enhanced) (public). Verify your selected interpreter is Python 3.11 or newer; on macOS the system python3 may be older.
 
 ```sh
 git clone https://github.com/Kenerator/ochsner-scheduling-enhanced.git
@@ -16,7 +16,51 @@ python3.11 -m venv .venv
 .venv/bin/python -m pip install -e '.[ui]'
 ```
 
-On Linux select a verified Python 3.11+ executable, for example python3.12. Supply OPENAI_API_KEY through your shell's protected environment and optionally OPENAI_MODEL (default gpt-5.4-mini). The application has no credential-vault dependency. Keys are never command-line arguments or project files. Model API calls require network access and account capability.
+On Linux select a verified Python 3.11+ executable, for example python3.12.
+
+### Normal Ochsner launcher
+
+The normal launcher starts the synthetic API and actual model-backed assistant.
+Install `lsof` on PATH for owned-listener verification. Configure
+`POC_SECRET_HELPER` to the absolute path of your existing trusted executable
+`bw-get-secret.sh`, or make the trusted `bw-get-secret` command available on
+PATH. Use your existing vault unlock/native credential setup. The exact item
+`[Env] (Ochsner PoC) OPENAI_API_KEY` must have one scalar key in **notes**;
+the launcher privately captures that field. Never paste it into commands or
+project files. There is no inherited-key, generic-item or offline fallback.
+
+```sh
+.venv/bin/python tools/poc-runtime/launch.py --help
+.venv/bin/python tools/poc-runtime/launch.py --doctor --api-port 29111
+.venv/bin/python tools/poc-runtime/launch.py --api-port 29111
+# Browser alternative; open http://127.0.0.1:29181 after readiness:
+.venv/bin/python tools/poc-runtime/launch.py --interface browser --api-port 29111 --ui-port 29181
+```
+
+Run from the repository root. Choose free, distinct loopback ports; the launcher
+fails rather than stopping an existing listener. CLI is the default interface.
+The model is `gpt-5.4-mini` unless configured by `OPENAI_MODEL`; explicit
+`--model MODEL` takes precedence. Overrides are configuration, not qualification
+of another model. Help and doctor make no vault or model request and start no
+services; doctor checks helper availability, dependencies and free ports only.
+Normal startup makes no paid probe; conversation interpretation uses the model.
+
+Ctrl-C stops/reaps only this launch's children. The model key reaches only the
+assistant process; reference-server output is suppressed. Missing helper/key,
+invalid configuration, dependency failure or a port conflict returns a safe
+error, with no substitute model or silent offline mode. Enhanced has no
+interactive `--offline` mode; use the explicitly scripted demos under
+[Verify](#verify). The reviewed runtime and consumer no-call checks are currently
+qualified on Mac ARM; other platforms are unqualified for this launcher. See
+[launcher evidence](docs/internal/uat.md#model-first-launcher-increment).
+
+### Direct reviewer entrypoints
+
+Public reviewers may continue using the existing application commands below
+without Bitwarden. Explicitly supply `OPENAI_API_KEY` through your protected
+process environment and optionally `OPENAI_MODEL` (default `gpt-5.4-mini`).
+These commands do not invoke the new credential helper. Model API calls require
+network access and account capability.
 
 Terminal 1 starts the unchanged reference server with audit output suppressed:
 

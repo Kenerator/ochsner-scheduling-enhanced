@@ -10,6 +10,34 @@
 
 ## Clarifications
 
+### Adopted launch-only increment — 2026-10-12
+
+The approved five-consumer model-first launcher plan adds a thin shared-runtime
+entrypoint to Enhanced under Story 6 (Sam-Rae reviewer hypothesis), with safe
+configuration/recovery disclosure relevant to Story 5 (Morgan-Rae support).
+This explicit scope adoption changes neither scheduling nor identity authority.
+The existing direct CLI/browser environment entrypoints and no-call demos remain.
+
+- **FR-021**: The normal Ochsner wrapper MUST use the reviewed, hash-pinned
+  reusable runtime and actual Enhanced model adapter. Preserve the default
+  `gpt-5.4-mini`, `OPENAI_MODEL` configuration and explicit supported launcher
+  override. Resolve only `[Env] (Ochsner PoC) OPENAI_API_KEY` privately through
+  the approved scalar helper; never substitute an inherited key or offline mode.
+  Model credentials MUST reach only the model-hosting child, never the reference
+  server, argv, files or logs. Help/doctor MUST make no vault/model call; missing
+  configuration, dependency or occupied port MUST fail safely. Stop only owned
+  children. No interactive offline capability is inferred from scripted demos.
+- **Launch acceptance**: Installed-runtime consumer tests must bind its reviewed
+  manifest to actual bytes; fake HTTPS requests from real CLI/browser adapter
+  constructors must demonstrate default/environment/explicit model routing.
+  Verify no-call help/doctor, rejected unsupported modes/configuration, secret
+  isolation and failure/cleanup boundaries. Run the existing suite and all four
+  deterministic demos; label retained live evidence with its historical source.
+  No new paid-call qualification, product RC or scheduling expansion is adopted.
+
+Execution authority remains in the Operator-approved coordination, not this
+specification. The public repository contains no private operational plan copy.
+
 ### Session 2026-10-08
 
 - Q: May phone, DOB, ZIP or returned patient records be included in model requests? → A: B: Keep phone, DOB, ZIP and returned patient records outside model requests; collect identity locally and redact messages before model interpretation.

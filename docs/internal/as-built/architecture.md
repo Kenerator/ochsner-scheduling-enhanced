@@ -6,6 +6,29 @@ This describes the implemented Enhanced candidate. [Native contracts](../../../s
 
 ## Components and ownership
 
+### Model-first launch boundary (2026-10-12)
+
+The adopted [runtime manifest](../../../tools/poc-runtime/export-manifest.json)
+pins four identical modules reviewed from Template source
+`b7875452e3a999ca69ce170822c66e7f679b4442` (delivery `6e894645`). Enhanced's
+[configuration](../../../poc-launch.json) selects its existing adapter/default
+model and the dedicated item's notes field. This additive launch boundary leaves
+the product core at reviewed base `1643127` unchanged.
+
+`launch.main` parses/validates then performs local preflight before private key
+resolution. `adapters.process_specs` starts the unchanged vendor server directly,
+with a secret-free allowlisted environment and discarded audit output, followed
+by CLI or headless Marimo as the sole model host. `processes.run_owned` verifies
+the exact child PID's IPv4 loopback listener with `lsof`, registers owned children
+and reaps them on exit/cancellation. No wrapper-nested server is created, no
+foreign listener is stopped, and no model call is made for startup readiness.
+
+[Consumer tests](../../../tests/test_runtime_launcher.py) cover actual
+constructors/fake HTTPS, installed hashes, mode/error boundaries and real owned
+vendor cleanup. These are Mac ARM/no-call evidence, not a new browser execution,
+language-performance or Linux claim. [UAT](../uat.md#model-first-launcher-increment)
+records the candidate evidence and limits.
+
 ```mermaid
 flowchart TD
     User[Local scheduling user]

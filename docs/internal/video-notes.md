@@ -1,5 +1,11 @@
 # Video notes
 
+Launch addendum:2026-10-12. [Normal launch instructions](../../README.md#normal-ochsner-launcher)
+now use the dedicated-item model-first wrapper, with unchanged scheduling
+behavior and model default. [No-call candidate evidence](uat.md#model-first-launcher-increment)
+does not qualify new video/browser/live-model coverage. Existing footage remains
+bound to its historical RC; no capture or media update was executed by L4.
+
 Updated:2026-10-09, America/Chicago. **All NEW VIDEO CAPTURE is forbidden unless expressly reauthorized.** Assembly/narration/render from viable existing footage and actual UI stills is now authorized. No video capture has started in this lane and no lane clips exist. This supersedes earlier slot scheduling and the broader media hold. Product remains qualified at **RC-2 `3330c7e72894928b3d5a6903254fed08bf3ce12b`**. Media owns recording mechanics/final<=5min edit and omitted-coverage disclosure. Stills may support authorized assembly; identify them as stills and never claim continuous capture.
 
 ## Tested script, maximum5:00

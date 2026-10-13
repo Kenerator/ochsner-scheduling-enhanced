@@ -4,6 +4,49 @@ description: "Dependency-ordered implementation tasks for guarded scheduling"
 
 # Tasks: Guarded AI Appointment Scheduling
 
+## Adopted L4 launcher increment — 2026-10-12
+
+FR-021 extends US6 reproduction and US5 safe support disclosure only. Historical
+tasks/evidence below remain unchanged. The shared runtime has a separate owner;
+this owner integrates Enhanced only. No new product RC, paid request or service
+interference is authorized by this increment.
+
+- [x] T069 [US6] Reconcile clean source/remote main, protected integration and
+  compatible interpreter; record adopted launch-only spec/plan delta.
+- [x] T070 [US6] Prepare and run tests/test_runtime_launcher.py against the actual
+  installed runtime: manifest hashes, default/environment/explicit model routing
+  through real CLI/browser constructors with fake HTTPS, no-call help/doctor,
+  environment privacy and unsupported-mode/config/dependency/port failures.
+  Installation absence is not a routing regression or a completed test contract.
+- [x] T071 [US6] After the reviewed shared manifest/config contract is delivered,
+  install identical runtime bytes and Enhanced poc-launch.json; satisfy T070
+  without duplicating runtime or changing scheduling/identity/consent behavior.
+- [x] T072 [US5] Coordinate one serialized non-disclosing exact-item scalar-field
+  preflight with the shared owner; record safe field/status only. Never repeat a
+  completed shared lookup, print a key, or call a model as startup qualification.
+- [x] T073 [US6] Verify candidate suite/all four unchanged deterministic demos,
+  installed-runtime no-call diagnostics and routing/lifecycle behavior; retain
+  applicable historical genuine-model evidence with source/date/limits.
+- [x] T074 [US6] Finalize README/getting-started and affected as-built/source
+  links, docs/internal/persona-story-test-index.md and short next steps from
+  actual implementation/evidence. Explain direct reviewer versus normal
+  model-first wrapper, private helper setup, failure and owned Ctrl-C cleanup.
+- [ ] T075 [US6] Obtain SM independent final-diff review; repair only affected
+  deltas, stage/credential-scan and commit scoped owner changes; use ordinary
+  protected PR/CI/integration and read back source without moving existing tags.
+
+**L4 candidate evidence (2026-10-12)**: base source1643127, clean local/remote main
+verified; Python3.11.13 existing project interpreter and isolated owner worktree.
+Initial99 tests/all four demos passed. Five original consumer tests first failed
+on absent runtime before routing assertions; no artificial red behavior is
+claimed. Reviewed exact runtime delivery6e894645/manifestb7875452 then adopted;
+all four module hashes match. Expanded15 consumer tests plus existing99 pass
+(114 total), as do all four unchanged demos. A mocked CLI runner return-value
+mistake was corrected in the test harness, not product code. SM centrally
+confirmed dedicated notes-field preflight; this owner made no vault/model call.
+See [UAT](../../docs/internal/uat.md#model-first-launcher-increment) for bounds.
+Final independent review/protected integration T075 remains pending.
+
 **Input**: [plan.md](plan.md), [spec.md](spec.md), [research.md](research.md), [data-model.md](data-model.md), [contracts](contracts/README.md), [quickstart.md](quickstart.md).
 **Updated**: 2026-10-08. Implementation and verification progress recorded below; unchecked tasks remain outstanding.
 **Tests**: Required by the specification, project agreement and Constitution V. Write meaningful tests first, run and observe expected failures before the corresponding behavior. Existing generic scaffold tests/demos are not scheduling evidence.

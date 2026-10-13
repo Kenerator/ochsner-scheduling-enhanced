@@ -7,6 +7,30 @@
 
 ## Summary
 
+### Launch-only L4 increment — 2026-10-12
+
+Implement FR-021 using the identical reviewed `tools/poc-runtime/` export from
+the Template and Enhanced's own `poc-launch.json`; shared-runtime implementation
+has a separate sole owner. Both existing entrypoints already construct
+`ModelAdapter`, reading `OPENAI_MODEL` and `OPENAI_API_KEY`. Prefer routing through
+those interfaces without product-source edits. Preserve all existing core,
+identity, consent, public projection and no-call demo behavior.
+
+Owner branch: `codex/model-first-launcher`, based on
+`164312722b33e55c382b500cf97a26f6ee41aa39`. Use isolated state and the verified
+Python 3.11+ interpreter. Consumer tests import the installed runtime, assert its
+manifest, then construct real app adapters with only HTTPS replaced. Port,
+dependency, no-call help/doctor, invalid-mode and environment boundaries are
+tested without the vault or paid requests. Install only after the reviewed
+manifest/config contract arrives; never duplicate shared runtime implementation.
+The planned credential-field preflight remains serialized and non-disclosing.
+
+Update README/getting-started, affected as-built sections and the persona/story
+test index after integration. Independent final-diff review precedes ordinary
+protected branch/PR integration; no direct main push or checkpoint mutation.
+Native T069–T075 below own this increment's progress, separately from historical
+qualification and media status.
+
 Build genuine model-interpreted multi-turn provider lookup and guarded booking using a reusable Python core, thin conversational CLI and incremental Enhanced Marimo adapter. Deterministic code owns local identity, returned facts, proposal/consent and effects. The supplied server stays unchanged. Complete the mandatory slice and all accepted privacy/failure guards before optional Enhanced additions. See [research](research.md), [entities](data-model.md), [contracts](contracts/README.md) and [validation guide](quickstart.md).
 
 ## Technical Context

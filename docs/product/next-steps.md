@@ -1,5 +1,14 @@
 # Next steps
 
+Updated launcher increment:2026-10-12. The reviewed shared model-first runtime is
+installed in the isolated owner candidate;114 tests/all four deterministic demos
+passed on Mac ARM. Scheduling/vendor sources and historical RCs are unchanged.
+Finish independent final-diff review and normal protected integration under
+[T075](../../specs/001-guarded-scheduling/tasks.md); retain [launcher evidence and
+limits](../internal/uat.md#model-first-launcher-increment). No live model call or
+Linux/browser execution was newly qualified; direct reviewer commands remain.
+The historical product/media notes below retain their original source/date.
+
 Updated:2026-10-09. Qualified implementation:256a1b41bcbdb65927153cc8157ba4d8215e2165; initial private milestone poc/enhanced-guarded-ui-01 records 7738727 and remains immutable. [UAT](../internal/uat.md) records92 tests,4 demos, genuine-model/IAB flows and both fresh private clones.
 
 Remaining delivery: coordinate actual continuous scenario recording with SM/media and the Operator-assisted native recorder, then update [video notes](../internal/video-notes.md) and final [task handoff](../../specs/001-guarded-scheduling/tasks.md). No automatic recorder is exposed; screenshots/montages are not completion evidence. Keep UI28181/API 4011 private and synthetic. The +2h progress snapshot is recorded in [milestones](../internal/milestones.md); +3h will be captured on dispatch at actual time/SHA without stopping scope.
