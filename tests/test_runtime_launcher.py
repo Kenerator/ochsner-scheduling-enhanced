@@ -1,7 +1,8 @@
 """Consumer routing evidence uses the installed runtime and real app constructors.
 
-Only the HTTPS transport is replaced. No vault lookup, child startup or paid
-model request is permitted by these tests.
+Adapter routing uses fake HTTPS. Lifecycle tests start only owned synthetic
+vendor and harmless model-canary children. No vault lookup or paid model request
+is permitted by these tests.
 """
 import hashlib
 import importlib
