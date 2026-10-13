@@ -1,10 +1,10 @@
 # Next steps
 
-Updated launcher increment:2026-10-12. The reviewed shared model-first runtime is
-installed in the isolated owner candidate;114 tests/all four deterministic demos
+Updated launcher increment:2026-10-13. The reviewed shared model-first runtime is
+integrated on canonical main via [PR1](https://github.com/Kenerator/ochsner-scheduling-enhanced/pull/1),
+mergeee1a68c. Independent review passed;114 tests/all four deterministic demos
 passed on Mac ARM. Scheduling/vendor sources and historical RCs are unchanged.
-Finish independent final-diff review and normal protected integration under
-[T075](../../specs/001-guarded-scheduling/tasks.md); retain [launcher evidence and
+[T075](../../specs/001-guarded-scheduling/tasks.md) is complete; retain [launcher evidence and
 limits](../internal/uat.md#model-first-launcher-increment). No live model call or
 Linux/browser execution was newly qualified; direct reviewer commands remain.
 The historical product/media notes below retain their original source/date.

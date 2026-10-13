@@ -30,8 +30,14 @@ did not repeat the vault lookup or handle its value. No paid model call, actual
 browser interaction or cross-platform launcher qualification was performed.
 Historical RC-2 genuine-model/IAB evidence below applies only to unchanged
 product behavior at its original source/date; it is not new launcher/live proof.
-No new RC or checkpoint tag was created. Independent final consumer review and
-protected integration are pending in [T075](../../specs/001-guarded-scheduling/tasks.md).
+No new RC or checkpoint tag was created. SM's final consumer review approved
+`2cacc2f` and the docstring-only correction `4ff15e9`;15 independent focused
+consumer checks passed. [PR1](https://github.com/Kenerator/ochsner-scheduling-enhanced/pull/1)
+merged normally as `ee1a68ca47d6394c71cd10270bf566ae3aa61fc6` on2026-10-13.
+The merge tree `1be4eec1a2c45a186afe31af52895485bcdf9b15` equals the selected
+candidate's tree. Canonical main was fast-forwarded cleanly; all eight annotated
+tag objects and peeled targets are unchanged. No GitHub CI exists; no CI pass is
+claimed. [T075](../../specs/001-guarded-scheduling/tasks.md) records closure.
 
 The sections below retain historical product evidence and source identities.
 
