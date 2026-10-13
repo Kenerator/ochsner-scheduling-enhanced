@@ -6,6 +6,28 @@ Use this navigation aid with the [as-built architecture](architecture.md), [nati
 
 ## Find the relevant code
 
+### Additive model-first launcher (2026-10-12)
+
+The product source remains unchanged at base `1643127`. Reviewed reusable runtime
+source `b7875452`/delivery `6e894645` is pinned by
+[manifest](../../../tools/poc-runtime/export-manifest.json); Enhanced selects the
+canonical `ochsner-enhanced` CLI preset in [config](../../../poc-launch.json).
+
+- [launch.py](../../../tools/poc-runtime/launch.py): strict config/request parsing,
+  no-call help/doctor and preflight-before-key ordering.
+- [credentials.py](../../../tools/poc-runtime/credentials.py): exact named-item
+  scalar notes field capture and allowlisted model-only credential environments.
+- [adapters.py](../../../tools/poc-runtime/adapters.py): actual Enhanced CLI and
+  browser routing; direct unchanged vendor-process ownership.
+- [processes.py](../../../tools/poc-runtime/processes.py): bounded exact-PID IPv4
+  listener readiness and owned-child cleanup/interrupt handling.
+- [consumer tests](../../../tests/test_runtime_launcher.py): real constructors
+  with fake HTTPS, all four module hashes, no-call diagnostics, errors/ports,
+  real secret-free vendor child and cancellation/reaping. No new live AI or
+  actual browser execution is asserted by these tests.
+
+See [UAT](../uat.md#model-first-launcher-increment) for candidate-bound evidence.
+
 All source and test links below resolve from this document's directory.
 
 | Change or inspection | File and symbols | Relevant tests | Boundary to preserve |

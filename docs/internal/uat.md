@@ -1,5 +1,40 @@
 # Scheduling qualification evidence
 
+## Model-first launcher increment
+
+Updated: 2026-10-12 (America/Chicago). Additive candidate base:
+`164312722b33e55c382b500cf97a26f6ee41aa39`; product Python/vendor sources remain
+unchanged. Reviewed shared runtime delivery `6e89464582dd62a977aaec778c8d6f8a0adf25c7`
+contains manifest source `b7875452e3a999ca69ce170822c66e7f679b4442`/clean. All four
+installed module SHA-256 hashes match that manifest; no consumer regeneration.
+
+Using Python 3.11.13 on macOS ARM, the combined candidate suite passed **114
+tests in6.218s**, including15 [consumer launcher tests](../../tests/test_runtime_launcher.py).
+The four provider/booking/no-match/guards demos also passed against their own
+unchanged synthetic reference servers. Commands used `PYTHONPATH=src` and the
+existing compatible project interpreter against the isolated candidate source;
+this was not a newly installed fresh clone.
+
+Evidence covers actual CLI/browser adapter constructors with fake HTTPS,
+default `gpt-5.4-mini`, `OPENAI_MODEL` and explicit `--model` precedence; normal
+entrypoint named-key routing; private model-only credential environments; no-call
+help/doctor; invalid mode/model/config/ports, absent browser dependency and safe
+credential failure with no fallback. Real unchanged vendor children were started
+on isolated ports, their exact PID/IPv4 listener verified with `lsof`, and reaped
+on normal completion and injected cancellation. A foreign listener survived its
+occupied-port rejection. Reference stdout/stderr remained DEVNULL.
+
+SM performed the single serialized dedicated-item preflight centrally and
+confirmed `[Env] (Ochsner PoC) OPENAI_API_KEY`, scalar **notes** field. This owner
+did not repeat the vault lookup or handle its value. No paid model call, actual
+browser interaction or cross-platform launcher qualification was performed.
+Historical RC-2 genuine-model/IAB evidence below applies only to unchanged
+product behavior at its original source/date; it is not new launcher/live proof.
+No new RC or checkpoint tag was created. Independent final consumer review and
+protected integration are pending in [T075](../../specs/001-guarded-scheduling/tasks.md).
+
+The sections below retain historical product evidence and source identities.
+
 Updated: 2026-10-09, America/Chicago. Current qualified implementation revision: 3330c7e72894928b3d5a6903254fed08bf3ce12b (RC-2). Initial fresh clones qualified 7738727; both were subsequently fast-forwarded from GitHub and requalified as recorded below. Documentation-only changes are identified separately.
 
 Python: candidate .venv 3.11.13, macOS ARM. Current combined suite passed99 tests in6.110s after persona constraint repairs; all four supplied-reference demos and both remote-updated qualification clones passed. Initial qualification evidence remains below.
