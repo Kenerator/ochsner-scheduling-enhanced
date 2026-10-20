@@ -1,5 +1,28 @@
 # Scheduling qualification evidence
 
+## Current own-key policy (2026-10-20)
+
+Ochsner-supplied-key use is paused. The selected normal-launch reference is own
+Secure Note `[Env] OPENAI_API_KEY`, notes field, with no inherited or alternate
+item fallback. [Current binding](model-qualification-binding.json) records the
+scope and verification state. No real lookup or live-model qualification was
+performed by this adaptation; there is no own-key live pass to infer from the
+historical sections below. Two initial offline config/resolver tests reproduced
+the frozen runtime's rejection of the own item. Reviewed source
+`20e3dd56747797b35c082d109ac3bb0a7d7b1ebe`, export metadata commit
+`8b4ecef27273a8df72fcdabd1976f01ed35e523a`, supplied the shared correction;
+all five selected source and destination hashes matched before/after copying.
+The19 focused consumer tests now pass, as does the combined118-test suite
+(5.842s, Python3.11.13/macOS ARM) and all four unchanged scripted synthetic demos.
+Tests cover exact own-item/notes fake resolution, wrong-field/unknown-source
+rejection, no inherited/paused-item lookup-failure fallback, actual CLI/browser
+adapter construction, model overrides, model-only secret environments and owned
+synthetic-child lifecycle. No real helper, key or model service was exercised.
+Affected consumer review and protected delivery remain pending; the live-use
+hold remains. No app relaunch, external scheduling effect, new account allowance
+or accounting reset is implied. Historical-source parser compatibility supplies
+no permission to use the paused supplier source.
+
 ## Model-first launcher increment
 
 Updated: 2026-10-12 (America/Chicago). Additive candidate base:

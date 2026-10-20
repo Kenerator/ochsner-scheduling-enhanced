@@ -4,6 +4,39 @@ description: "Dependency-ordered implementation tasks for guarded scheduling"
 
 # Tasks: Guarded AI Appointment Scheduling
 
+## Own-key credential-policy adaptation — 2026-10-20
+
+- [x] T076 [US5] Adopt the immediate Ochsner-key pause; verify actual current
+  owned dispatch/listener state without new retrieval/model calls or unrelated
+  process inspection. Preserve actual liabilities and positively owned state.
+- [x] T077 [US6] Verify the selected own-account reference from documentation;
+  write offline RED config/fake-helper tests and report any frozen shared-runtime
+  capability gap before changing portable bytes. Never query/hash/copy a key.
+- [x] T078 [US6] Adopt only the reviewed shared capability correction/manifest;
+  explicitly bind own Secure Note notes in consumer config and qualification
+  evidence. Preserve models, stable roots, secret controls and accounting.
+- [x] T079 [US6] Run own-key fake-boundary tests GREEN, combined suite and all
+  deterministic demos; update current instructions and affected evidence/index
+  without relabeling historical Ochsner proofs as own-key qualification.
+- [ ] T080 [US6] Send exact source/tree/diff/tests/rollout constraints for SM
+  affected review before any selected live dispatch; retain no-live hold and
+  ordinary protected delivery rules. No new paid proof or service relaunch.
+
+Preparation: canonical clean sourcef226356; no listeners on previously owned
+ports28181/4011 and no lane-dispatched live request/in-flight qualification.
+Exact own reference `[Env] OPENAI_API_KEY`/notes confirmed from trusted helper
+documentation only. Two new offline tests failed as expected because the frozen
+runtime rejects this explicit item in config loading and private resolution.
+The gap was reported before shared edits. Reviewed runtime source20e3dd5/export
+metadata8b4ecef supplied the correction: exact five-file adoption, all source and
+destination SHA-256 values matched.19 focused tests, combined118 tests and all
+four scripted synthetic demos pass on Python3.11.13/macOS ARM. Current config
+selects own-item/notes explicitly; historical source compatibility is not paused
+source permission. No real helper lookup, key inspection, live model request,
+runtime relaunch or accounting change occurred. T080 affected review/protected
+delivery remains pending; own-account live qualification and execution remain
+held, not inferred from offline tests or old Ochsner-bound evidence.
+
 ## Adopted L4 launcher increment — 2026-10-12
 
 FR-021 extends US6 reproduction and US5 safe support disclosure only. Historical

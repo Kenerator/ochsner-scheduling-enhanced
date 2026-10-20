@@ -6,11 +6,24 @@ Use this navigation aid with the [as-built architecture](architecture.md), [nati
 
 ## Find the relevant code
 
+### Current own-key policy (2026-10-20)
+
+The current [manifest](../../../tools/poc-runtime/export-manifest.json) binds
+reviewed source20e3dd5/export metadata8b4ecef. The consumer's
+[configuration](../../../poc-launch.json) selects own Secure Note notes; the
+supplier key is paused. `credentials.validate_selection`, `resolve_key` and
+`launch.load_config` enforce the selected source/field contract without fallback.
+[Consumer tests](../../../tests/test_runtime_launcher.py) reproduce the earlier
+unsupported-own-item failure, then qualify actual installed-bundle fake resolution
+and failure behavior.19 focused/118 combined tests and all four scripted demos
+passed; [current binding](../model-qualification-binding.json) explicitly records
+no real credential lookup or live-model qualification. Historical lineage below
+remains original evidence, not a current-account proof or dispatch permission.
+
 ### Additive model-first launcher (2026-10-12)
 
-The product source remains unchanged at base `1643127`. Reviewed reusable runtime
-source `b7875452`/delivery `6e894645` is pinned by
-[manifest](../../../tools/poc-runtime/export-manifest.json); Enhanced selects the
+The product source remained unchanged at base `1643127`. The initial reusable runtime
+used source `b7875452`/delivery `6e894645`; Enhanced selected the
 canonical `ochsner-enhanced` CLI preset in [config](../../../poc-launch.json).
 
 - [launch.py](../../../tools/poc-runtime/launch.py): strict config/request parsing,
