@@ -18,8 +18,14 @@ Tests cover exact own-item/notes fake resolution, wrong-field/unknown-source
 rejection, no inherited/paused-item lookup-failure fallback, actual CLI/browser
 adapter construction, model overrides, model-only secret environments and owned
 synthetic-child lifecycle. No real helper, key or model service was exercised.
-Affected consumer review and protected delivery remain pending; the live-use
-hold remains. No app relaunch, external scheduling effect, new account allowance
+SM's affected consumer review selected exactc21e95c/tree9e16eb9 with19 independent
+installed tests passing. [PR3](https://github.com/Kenerator/ochsner-scheduling-enhanced/pull/3)
+merged normally with an exact-head check as176b356c0679d1e56528dfa7d10b6db9c01a318d;
+the merge tree9e16eb923a10a8ee533934d5da4e3fb466a51b00 matches the selected
+candidate. Canonical main fast-forwarded cleanly. An active managed Dependency
+Graph workflow exists, but it has no runs on this candidate and there are no
+candidate check results: absent, not green. Existing protections were respected.
+Offline delivery is complete; the live-use hold remains. No app relaunch, external scheduling effect, new account allowance
 or accounting reset is implied. Historical-source parser compatibility supplies
 no permission to use the paused supplier source.
 

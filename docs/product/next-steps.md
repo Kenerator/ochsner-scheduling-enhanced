@@ -1,9 +1,11 @@
 # Next steps
 
-Current own-key policy,2026-10-20: Ochsner-key use is paused. Complete
-[T080](../../specs/001-guarded-scheduling/tasks.md) affected review and protected
-delivery for the explicit own-item launcher binding. Reviewed shared source20e3dd5
-is installed with matching hashes;118 tests/all four scripted demos passed.
+Current own-key policy,2026-10-20: Ochsner-key use is paused.
+[T080](../../specs/001-guarded-scheduling/tasks.md) offline affected review and
+protected delivery are complete through [PR3](https://github.com/Kenerator/ochsner-scheduling-enhanced/pull/3),
+merge176b356. Reviewed shared source20e3dd5 is installed with matching hashes;
+118 tests/all four scripted demos passed. Candidate CI/check results are absent,
+not green; the managed Dependency Graph workflow has no candidate runs.
 No live dispatch/retrieval/relaunch is part of this adaptation. Preserve
 [qualification binding](../internal/model-qualification-binding.json) and all
 historical source/account distinctions. Earlier completed L4 integration below
