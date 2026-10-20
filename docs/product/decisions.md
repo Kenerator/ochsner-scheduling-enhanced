@@ -1,5 +1,14 @@
 # Key decisions
 
+Current credential policy,2026-10-20: pause all Ochsner-supplied-key use until
+explicit resumption. The normal wrapper selects own Secure Note
+`[Env] OPENAI_API_KEY`, scalar notes field, through the existing trusted helper;
+never inherited credentials or failure fallback. Model selection remains
+`gpt-5.4-mini`/`OPENAI_MODEL`/explicit override. Current adaptation is offline-only;
+no live qualification or new account budget is implied. Historical credential
+bindings and evidence retain their source/date. [Native tasks](../../specs/001-guarded-scheduling/tasks.md)
+own adaptation status.
+
 Updated: 2026-10-08.
 
 - Reusable guarded_scheduling core; thin stdlib HTTP/Responses adapters and CLI/Marimo surfaces. Supplied reference backend remains unchanged.

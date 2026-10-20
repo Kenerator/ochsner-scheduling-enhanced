@@ -10,6 +10,18 @@
 
 ## Clarifications
 
+### Credential-policy replacement — 2026-10-20
+
+Ochsner-supplied-key use is paused until explicitly resumed. FR-021 now selects
+the own-account Secure Note `[Env] OPENAI_API_KEY`, field `notes`, through the
+existing trusted helper. This is an explicit policy choice, never fallback on
+failure or an inherited key. Historical dedicated-Ochsner binding/evidence stays
+identified by source/date and does not qualify this current own-key binding.
+This lane performs offline fake-boundary tests only: no real lookup, model
+qualification, scheduling effect or relaunch is adopted. Existing model choice,
+identity/consent controls and any accounting/unknown liability remain unchanged;
+no replacement-account unlimited allowance is implied.
+
 ### Adopted launch-only increment — 2026-10-12
 
 The approved five-consumer model-first launcher plan adds a thin shared-runtime
@@ -21,7 +33,7 @@ The existing direct CLI/browser environment entrypoints and no-call demos remain
 - **FR-021**: The normal Ochsner wrapper MUST use the reviewed, hash-pinned
   reusable runtime and actual Enhanced model adapter. Preserve the default
   `gpt-5.4-mini`, `OPENAI_MODEL` configuration and explicit supported launcher
-  override. Resolve only `[Env] (Ochsner PoC) OPENAI_API_KEY` privately through
+  override. Resolve only `[Env] OPENAI_API_KEY`, field `notes`, privately through
   the approved scalar helper; never substitute an inherited key or offline mode.
   Model credentials MUST reach only the model-hosting child, never the reference
   server, argv, files or logs. Help/doctor MUST make no vault/model call; missing

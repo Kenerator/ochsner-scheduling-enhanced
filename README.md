@@ -25,9 +25,15 @@ Install `lsof` on PATH for owned-listener verification. Configure
 `POC_SECRET_HELPER` to the absolute path of your existing trusted executable
 `bw-get-secret.sh`, or make the trusted `bw-get-secret` command available on
 PATH. Use your existing vault unlock/native credential setup. The exact item
-`[Env] (Ochsner PoC) OPENAI_API_KEY` must have one scalar key in **notes**;
+`[Env] OPENAI_API_KEY` must have one scalar own-account key in **notes**;
 the launcher privately captures that field. Never paste it into commands or
-project files. There is no inherited-key, generic-item or offline fallback.
+project files. This is the explicit own-key policy selection, with no
+inherited-key, alternate-item or offline fallback. Ochsner-supplied-key use is
+paused until explicitly resumed. See [current binding and qualification status](docs/internal/model-qualification-binding.json);
+historical Ochsner-bound preflight evidence is not current own-key qualification.
+Current own-key acceptance is offline-only. Live use remains held pending
+affected review and verification of own-account controls; these commands are
+setup references, not evidence of a real-key lookup or model request.
 
 ```sh
 .venv/bin/python tools/poc-runtime/launch.py --help
@@ -59,7 +65,8 @@ qualified on Mac ARM; other platforms are unqualified for this launcher. See
 Public reviewers may continue using the existing application commands below
 without Bitwarden. Explicitly supply `OPENAI_API_KEY` through your protected
 process environment and optionally `OPENAI_MODEL` (default `gpt-5.4-mini`).
-These commands do not invoke the new credential helper. Model API calls require
+These commands do not invoke the new credential helper. Use only the selected
+own-account key; the Ochsner-supplied-key pause also applies here. Model API calls require
 network access and account capability.
 
 Terminal 1 starts the unchanged reference server with audit output suppressed:

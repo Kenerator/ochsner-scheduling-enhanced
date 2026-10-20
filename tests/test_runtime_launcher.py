@@ -111,12 +111,44 @@ class RuntimeLauncherTests(unittest.TestCase):
                                                {'OPENAI_MODEL': 'configured-model'}, 'explicit-model')
 
     def test_exact_credential_reference_and_no_inherited_key(self):
-        self.assertEqual('[Env] (Ochsner PoC) OPENAI_API_KEY', self.config['credential']['item'])
+        self.assertEqual('[Env] OPENAI_API_KEY', self.config['credential']['item'])
         _, host = self.model_spec('cli', environ={
             'OPENAI_API_KEY': STALE, 'BW_SESSION': 'synthetic-session'})
         self.assertEqual('synthetic-launcher-canary', host.environment['OPENAI_API_KEY'])
         self.assertNotIn('stale-synthetic-key', repr(host))
         self.assertNotIn('synthetic-launcher-canary', repr(host))
+
+    def test_explicit_own_item_configuration_is_accepted_without_vault_access(self):
+        config = json.loads(json.dumps(self.config))
+        config['credential']['item'] = '[Env] OPENAI_API_KEY'
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / 'poc-launch.json'
+            path.write_text(json.dumps(config))
+            with patch.object(self.credentials, 'resolve_key', side_effect=AssertionError('vault called')):
+                try:
+                    loaded = self.launch.load_config(path)
+                except self.launch.LaunchError:
+                    self.fail('The explicitly selected own-key item is rejected by the frozen runtime.')
+        self.assertEqual('[Env] OPENAI_API_KEY', loaded['credential']['item'])
+        self.assertEqual('notes', loaded['credential']['field'])
+
+    def test_own_item_resolution_uses_exact_notes_without_inherited_or_item_fallback(self):
+        credential = dict(self.config['credential'], item='[Env] OPENAI_API_KEY', field='notes')
+        calls = []
+        def run(argv, **kwargs):
+            calls.append((argv, kwargs))
+            return subprocess.CompletedProcess(argv, 0, 'not-a-real-secret\n', '')
+        with (patch.object(self.credentials, 'helper_executable', return_value='/fixture/trusted-helper'),
+              patch.dict(os.environ, {'OPENAI_API_KEY': STALE})):
+            try:
+                selected = self.credentials.resolve_key(credential, run=run)
+            except self.launch.LaunchError:
+                self.fail('The explicit own-key reference cannot reach the injected fake helper.')
+        self.assertEqual('not-a-real-secret', selected)
+        self.assertEqual(1, len(calls))
+        self.assertEqual(['/fixture/trusted-helper', '[Env] OPENAI_API_KEY', 'notes'], calls[0][0])
+        self.assertNotIn('OPENAI_API_KEY', calls[0][1]['env'])
+        self.assertNotIn('BW_SESSION', calls[0][1]['env'])
 
     def test_help_neither_resolves_credentials_nor_starts_children(self):
         with (patch.object(self.credentials, 'resolve_key', side_effect=AssertionError('vault called')),
@@ -130,7 +162,7 @@ class RuntimeLauncherTests(unittest.TestCase):
 
     def test_reviewed_manifest_matches_all_installed_module_bytes(self):
         manifest = json.loads((RUNTIME / 'export-manifest.json').read_text())
-        self.assertEqual('b7875452e3a999ca69ce170822c66e7f679b4442', manifest['source_revision'])
+        self.assertEqual('20e3dd56747797b35c082d109ac3bb0a7d7b1ebe', manifest['source_revision'])
         self.assertEqual('clean', manifest['source_worktree_state'])
         expected = {'adapters.py', 'credentials.py', 'launch.py', 'processes.py'}
         self.assertEqual(expected, {Path(p).name for p in manifest['files']})
@@ -139,6 +171,27 @@ class RuntimeLauncherTests(unittest.TestCase):
         self.assertEqual('enhanced', self.config['adapter'])
         self.assertEqual('cli', self.config['default_interface'])
         self.assertEqual('notes', self.config['credential']['field'])
+
+    def test_own_item_rejects_unsupported_field_or_unknown_source_before_lookup(self):
+        for item, field in (('[Env] OPENAI_API_KEY', 'auto'),
+                            ('[Env] OPENAI_API_KEY', 'password'),
+                            ('[Env] OTHER_API_KEY', 'notes')):
+            selection = dict(self.config['credential'], item=item, field=field)
+            with (self.subTest(item=item, field=field),
+                  patch.object(self.credentials, 'helper_executable', side_effect=AssertionError('helper discovered'))):
+                with self.assertRaises(self.launch.LaunchError):
+                    self.credentials.resolve_key(selection)
+
+    def test_own_helper_failure_does_not_try_a_paused_or_inherited_source(self):
+        calls = []
+        def run(argv, **kwargs):
+            calls.append(argv)
+            return subprocess.CompletedProcess(argv, 1, '', 'synthetic failure')
+        with (patch.object(self.credentials, 'helper_executable', return_value='/fixture/trusted-helper'),
+              patch.dict(os.environ, {'OPENAI_API_KEY': STALE})):
+            with self.assertRaises(self.launch.LaunchError):
+                self.credentials.resolve_key(self.config['credential'], run=run)
+        self.assertEqual([['/fixture/trusted-helper', '[Env] OPENAI_API_KEY', 'notes']], calls)
 
     def free_port(self):
         with socket.socket() as probe:

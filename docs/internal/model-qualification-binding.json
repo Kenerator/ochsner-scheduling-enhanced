@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "updated": "2026-10-20",
+  "source_base": "f22635633e0be9cf004c57285d2a6adac58aa1ff",
+  "current_credential_reference": {
+    "item": "[Env] OPENAI_API_KEY",
+    "field": "notes",
+    "selection": "explicit_policy",
+    "fallback": "none"
+  },
+  "ochsner_supplied_key": "paused_until_explicit_resumption",
+  "runtime_source_revision": "20e3dd56747797b35c082d109ac3bb0a7d7b1ebe",
+  "runtime_export_metadata_commit": "8b4ecef27273a8df72fcdabd1976f01ed35e523a",
+  "candidate_status": "awaiting_affected_consumer_review",
+  "verification": "118_tests_and_four_deterministic_demos_passed_offline",
+  "current_own_key_live_qualification": "not_run",
+  "credential_lookup_by_this_adaptation": "not_performed",
+  "new_live_dispatch": "not_authorized_by_this_adaptation",
+  "model_runtime": "not_started_under_current_binding",
+  "accounting_or_budget_mutations": "none",
+  "historical_evidence": [
+    {
+      "source": "f22635633e0be9cf004c57285d2a6adac58aa1ff",
+      "binding": "dedicated_ochsner_runtime_reference_and_delegated_preflight",
+      "current_own_key_qualification": false
+    },
+    {
+      "source": "3330c7e72894928b3d5a6903254fed08bf3ce12b",
+      "binding": "historical_product_evidence_not_reestablished_for_current_account",
+      "current_own_key_qualification": false
+    }
+  ]
+}

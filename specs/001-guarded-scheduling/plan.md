@@ -7,6 +7,24 @@
 
 ## Summary
 
+### Own-key policy adaptation — 2026-10-20
+
+Keep the Ochsner-supplied-key pause effective without real retrievals or model
+calls. Select `[Env] OPENAI_API_KEY`/notes explicitly in the consumer config;
+preserve model/override semantics and all product/accounting state. Red tests
+must exercise config acceptance and exact own-item fake-helper dispatch with no
+inherited/alternate-item fallback. The initial pinned runtime rejected the own
+item in both config loading and resolution: this concrete shared capability gap
+was reported before changes. Reviewed source20e3dd5/export metadata8b4ecef now
+supplies the exact shared correction; no local portable implementation or hash
+regeneration is adopted. All five supplied hashes matched.19 focused and118
+combined tests plus all four scripted demos passed before affected review.
+
+Update current launch instructions and qualification binding while retaining
+historical source identities. No real credential lookup is needed to prove
+offline config. No live qualification, relaunch, paid dispatch, budget reset,
+service interference or unrelated modernization is part of this adaptation.
+
 ### Launch-only L4 increment — 2026-10-12
 
 Implement FR-021 using the identical reviewed `tools/poc-runtime/` export from

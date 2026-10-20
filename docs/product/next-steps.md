@@ -1,5 +1,14 @@
 # Next steps
 
+Current own-key policy,2026-10-20: Ochsner-key use is paused. Complete
+[T080](../../specs/001-guarded-scheduling/tasks.md) affected review and protected
+delivery for the explicit own-item launcher binding. Reviewed shared source20e3dd5
+is installed with matching hashes;118 tests/all four scripted demos passed.
+No live dispatch/retrieval/relaunch is part of this adaptation. Preserve
+[qualification binding](../internal/model-qualification-binding.json) and all
+historical source/account distinctions. Earlier completed L4 integration below
+remains historical evidence, not current own-key qualification.
+
 Updated launcher increment:2026-10-13. The reviewed shared model-first runtime is
 integrated on canonical main via [PR1](https://github.com/Kenerator/ochsner-scheduling-enhanced/pull/1),
 mergeee1a68c. Independent review passed;114 tests/all four deterministic demos

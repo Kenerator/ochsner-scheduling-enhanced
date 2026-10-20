@@ -6,10 +6,28 @@ This describes the implemented Enhanced candidate. [Native contracts](../../../s
 
 ## Components and ownership
 
+### Explicit own-key policy boundary (2026-10-20)
+
+The current [configuration](../../../poc-launch.json) selects own Secure Note
+`[Env] OPENAI_API_KEY`/notes. Ochsner-key use is paused. The current
+[manifest](../../../tools/poc-runtime/export-manifest.json) binds reviewed shared
+source `20e3dd56747797b35c082d109ac3bb0a7d7b1ebe`, delivered by export metadata
+commit `8b4ecef27273a8df72fcdabd1976f01ed35e523a`; all selected file hashes match.
+`credentials.validate_selection` and config loading accept this explicit source
+without inherited or failure fallback. Legacy Ochsner-source parsing remains
+compatibility, not permission to dispatch it. Only the model host receives the
+privately captured scalar; Enhanced model selection, product/vendor source,
+canonical root and owned-process cleanup remain unchanged.
+
+The19 focused/118 combined offline tests and four scripted demos qualify routing
+and lifecycle only. [Current binding](../model-qualification-binding.json)
+separates this from real credential/model qualification. No real lookup, live
+request, relaunch, replacement-account allowance or accounting mutation occurred.
+The source identities below describe the original launcher delivery.
+
 ### Model-first launch boundary (2026-10-12)
 
-The adopted [runtime manifest](../../../tools/poc-runtime/export-manifest.json)
-pins four identical modules reviewed from Template source
+The initial runtime delivery pinned four identical modules reviewed from Template source
 `b7875452e3a999ca69ce170822c66e7f679b4442` (delivery `6e894645`). Enhanced's
 [configuration](../../../poc-launch.json) selects its existing adapter/default
 model and the dedicated item's notes field. This additive launch boundary leaves

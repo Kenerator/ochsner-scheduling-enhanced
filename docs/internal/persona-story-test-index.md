@@ -1,5 +1,14 @@
 # Persona, story and test index
 
+Current policy delta,2026-10-20: Sam-Rae US6 reproducibility and Morgan-Rae US5
+truthful recovery now include explicit own-account selection and paused supplier
+key use. [Binding](model-qualification-binding.json) and native T076–T080 own
+current status. New config/fake-helper tests went RED→GREEN with reviewed shared
+source20e3dd5;19 focused/118 combined tests and all four scripted demos passed.
+No own-key live pass or new user-facing behavior is established by old
+Ochsner-bound evidence. Existing exact pins, product behavior and unknown-effect
+controls remain unchanged.
+
 Updated: 2026-10-12. Reviewed baseline:
 `164312722b33e55c382b500cf97a26f6ee41aa39`; additive launcher uses reviewed runtime
 `b7875452`/delivery `6e894645`. The candidate's114-test suite passed on Mac ARM,
