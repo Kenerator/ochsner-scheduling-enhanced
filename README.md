@@ -31,8 +31,9 @@ project files. This is the explicit own-key policy selection, with no
 inherited-key, alternate-item or offline fallback. Ochsner-supplied-key use is
 paused until explicitly resumed. See [current binding and qualification status](docs/internal/model-qualification-binding.json);
 historical Ochsner-bound preflight evidence is not current own-key qualification.
-Current own-key acceptance is offline-only. Live use remains held pending
-affected review and verification of own-account controls; these commands are
+Current own-key acceptance is offline-only; affected review passed. Live use
+remains held pending verification of own-account controls and separate selection
+of live dispatch; these commands are
 setup references, not evidence of a real-key lookup or model request.
 
 ```sh

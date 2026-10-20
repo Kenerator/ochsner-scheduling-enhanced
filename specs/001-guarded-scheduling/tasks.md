@@ -18,7 +18,7 @@ description: "Dependency-ordered implementation tasks for guarded scheduling"
 - [x] T079 [US6] Run own-key fake-boundary tests GREEN, combined suite and all
   deterministic demos; update current instructions and affected evidence/index
   without relabeling historical Ochsner proofs as own-key qualification.
-- [ ] T080 [US6] Send exact source/tree/diff/tests/rollout constraints for SM
+- [x] T080 [US6] Send exact source/tree/diff/tests/rollout constraints for SM
   affected review before any selected live dispatch; retain no-live hold and
   ordinary protected delivery rules. No new paid proof or service relaunch.
 
@@ -33,9 +33,16 @@ destination SHA-256 values matched.19 focused tests, combined118 tests and all
 four scripted synthetic demos pass on Python3.11.13/macOS ARM. Current config
 selects own-item/notes explicitly; historical source compatibility is not paused
 source permission. No real helper lookup, key inspection, live model request,
-runtime relaunch or accounting change occurred. T080 affected review/protected
-delivery remains pending; own-account live qualification and execution remain
-held, not inferred from offline tests or old Ochsner-bound evidence.
+runtime relaunch or accounting change occurred. SM affected review selected
+exactc21e95c/tree9e16eb9 and independently passed19 installed tests. Normal
+[PR3](https://github.com/Kenerator/ochsner-scheduling-enhanced/pull/3) merged with
+an exact-head check as `176b356c0679d1e56528dfa7d10b6db9c01a318d`; its tree
+`9e16eb923a10a8ee533934d5da4e3fb466a51b00` equals the selected candidate.
+Canonical main fast-forwarded cleanly. The active managed Dependency Graph
+workflow has no runs on this candidate; candidate CI/check results are absent,
+not green. No protection bypass occurred. T080 offline adoption is complete;
+own-account live qualification and execution remain held, not inferred from
+offline tests or old Ochsner-bound evidence.
 
 ## Adopted L4 launcher increment — 2026-10-12
 
